@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{_fragments/head :: head('FHIR/HL7 - Visor', ~{})}"></head>
+<body>
+<nav th:replace="~{_fragments/navbar :: navbar(${active})}"></nav>
+
+<main class="container" style="max-width:1100px;margin:2rem auto;">
+
+    <!-- Introducción HL7 -->
+    <section style="margin:1.5rem 0;padding:1rem;border:1px solid #e2e8f0;border-radius:.75rem;background:#f8fafc;">
+        <h2 style="font-size:1.1rem;margin-bottom:.5rem;">¿Qué es HL7 y cómo se relaciona con este proyecto?</h2>
+        <p style="color:#334155;line-height:1.5;">
+            HL7 (Health Level Seven) es un conjunto de estándares internacionales para el intercambio
+            electrónico de información clínica y administrativa entre sistemas de salud. Su perfil
+            FHIR (Fast Healthcare Interoperability Resources) modela los datos como <em>recursos</em>
+            (por ejemplo, <code>Patient</code>, <code>Observation</code>, <code>DiagnosticReport</code>) que pueden
+            consultarse y transportarse fácilmente mediante APIs y formatos como JSON.
+        </p>
+        <p style="color:#334155;line-height:1.5;">
+            Este visor es la capa de exploración del proyecto: te permite consultar esos recursos FHIR
+            de forma masiva (“Todos”) o puntual por (“UUID”), visualizar un resumen amigable y revisar
+            el JSON original. Así comprobamos la interoperabilidad de nuestro backend con los estándares HL7/FHIR.
+        </p>
+    </section>
+
+    <!-- Login -->
+    <section id="loginSection" style="max-width:420px;margin:0 auto 2rem;">
+        <h1>Iniciar sesión</h1>
+        <p style="color:#64748b">Autentícate para ver el visor HL7.</p>
+        <form id="loginForm" style="display:grid;gap:12px;margin-top:16px;">
+            <div>
+                <label>Usuario</label>
+                <input id="usuario" type="text" required
+                       style="width:100%;padding:.6rem .8rem;border:1px solid #cbd5e1;border-radius:.75rem;">
+            </div>
+            <div>
+                <label>Contraseña</label>
+                <input id="contrasena" type="password" required
+                       style="width:100%;padding:.6rem .8rem;border:1px solid #cbd5e1;border-radius:.75rem;">
+            </div>
+            <button type="submit"
+                    style="padding:.6rem 1rem;border:none;border-radius:.75rem;background:#4f46e5;color:white;cursor:pointer;">
+                Entrar
+            </button>
+            <div id="loginMsg" style="display:none;padding:.4rem .6rem;border-radius:.5rem;"></div>
+        </form>
+    </section>
+
+
+    <section id="appSection" style="display:none;">
+        <div style="display:flex;align-items:center;gap:12px;">
+            <h1 style="margin:0;">Visor HL7 FHIR</h1>
+
+            <div id="userBadge"
+                 style="margin-left:auto;background:#ecfeff;border:1px solid #a5f3fc;color:#0e7490;padding:.25rem .5rem;border-radius:.5rem;font-size:.85rem;">
+            </div>
+
+            <button id="btnLogout"
+                    style="border:none;background:#e11d48;color:#fff;padding:.4rem .8rem;border-radius:.5rem;cursor:pointer;">
+                Salir
+            </button>
+        </div>
+        <p style="color:#64748b;margin-top:.5rem">Consulta “todos” o por “UUID” sobre tus recursos FHIR.</p>
+
+        <section style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0;">
+            <div>
+                <label style="display:block;font-weight:600;font-size:.9rem;margin-bottom:4px;">Entidad</label>
+                <select id="entity" style="width:100%;padding:.6rem .8rem;border:1px solid #cbd5e1;border-radius:.75rem;">
+                    <option th:each="e : ${fhirEntities}" th:value="${e}" th:text="${e}"></option>
+                </select>
+            </div>
+            <div>
+                <label style="display:block;font-weight:600;font-size:.9rem;margin-bottom:4px;">Tipo de consulta</label>
+                <div style="display:flex;gap:16px;align-items:center;padding:.4rem 0;">
+                    <label><input type="radio" name="mode" value="all" checked> Todos</label>
+                    <label><input type="radio" name="mode" value="byId"> Por UUID</label>
+                </div>
+                <input id="uuid" type="text" placeholder="550e8400-e29b-41d4-a716-446655440000"
+                       style="width:100%;padding:.6rem .8rem;border:1px solid #cbd5e1;border-radius:.75rem;" disabled />
+            </div>
+        </section>
+
+        <div style="display:flex;gap:12px;align-items:center;margin:.5rem 0 1rem;">
+            <button id="btnFetch"
+                    style="padding:.6rem 1rem;border:none;border-radius:.75rem;background:#4f46e5;color:white;cursor:pointer;">
+                Consultar
+            </button>
+            <div id="alert" style="display:none;padding:.4rem .6rem;border-radius:.5rem;"></div>
+        </div>
+
+        <section id="summary"></section>
+
+        <section style="margin-top:16px;">
+            <details>
+                <summary style="cursor:pointer;color:#334155;">Ver JSON</summary>
+                <pre id="jsonView" style="white-space:pre-wrap;background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:12px;max-height:60vh;overflow:auto;"></pre>
+            </details>
+        </section>
+    </section>
+</main>
+
+<footer th:replace="~{_fragments/footer :: footer}"></footer>
+
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    const $ = (id) => document.getElementById(id);
+
+
+    function showInline(el, msg, kind="info"){
+        el.style.display="inline-block";
+        el.style.background = kind==="error"?"#fee2e2":(kind==="ok"?"#ecfeff":"#f8fafc");
+        el.style.border = "1px solid " + (kind==="error"?"#fecaca":(kind==="ok"?"#a5f3fc":"#e2e8f0"));
+        el.style.color = kind==="error"?"#991b1b":"#334155";
+        el.textContent = msg;
+    }
+    function hide(el){ el.style.display="none"; el.textContent=""; }
+    function fmtDate(d){ if(!d) return ""; const dt=new Date(d); return isNaN(dt)?d:dt.toLocaleString(); }
+    function renderRow(k,v){ if(!v && v!==0) return ""; return `<div style="display:grid;grid-template-columns:160px 1fr;gap:12px;margin:.25rem 0;"><div style="color:#64748b">${k}</div><div>${v}</div></div>`; }
+    function currentMode(){ return [...document.querySelectorAll('input[name="mode"]')].find(r=>r.checked)?.value || "all"; }
+
+
+    function getUser(){
+        try { return JSON.parse(localStorage.getItem("authUser") || "null"); } catch { return null; }
+    }
+    function setUser(u){
+        if(u) localStorage.setItem("authUser", JSON.stringify(u));
+        else  localStorage.removeItem("authUser");
+    }
+    function updateUIByAuth(){
+        const u = getUser();
+        if(u){
+            $("loginSection").style.display = "none";
+            $("appSection").style.display = "block";
+            $("userBadge").textContent = `${u.nombre} · ${u.role}`;
+        }else{
+            $("appSection").style.display = "none";
+            $("loginSection").style.display = "block";
+            $("userBadge").textContent = "";
+        }
+    }
+    updateUIByAuth();
+
+
+    $("loginForm").addEventListener("submit", async (e)=>{
+        e.preventDefault();
+        const box = $("loginMsg");
+        showInline(box, "Autenticando…");
+        try{
+            const res = await fetch("/api/auth/login", {
+                method: "POST",
+                headers: {"Content-Type":"application/json"},
+                // no se usan credenciales ni Authorization porque tu login no devuelve sesión ni token
+                body: JSON.stringify({
+                    usuario:   $("usuario").value.trim(),
+                    contrasena: $("contrasena").value.trim()
+                })
+            });
+            if(!res.ok){
+                if(res.status === 401){ showInline(box, "Credenciales inválidas", "error"); return; }
+                throw new Error(`${res.status} ${res.statusText}`);
+            }
+            const auth = await res.json(); // { publicId, nombre, usuario, role }
+            setUser(auth);
+            hide(box);
+            updateUIByAuth();
+        }catch(err){
+            console.error(err);
+            showInline(box, "Error de servidor", "error");
+        }
+    });
+
+
+    $("btnLogout").addEventListener("click", ()=>{
+        setUser(null);
+        updateUIByAuth();
+    });
+
+    const alertBox = $("alert");
+    function showAlert(msg, type="info"){ showInline(alertBox, msg, type); }
+    function clearAlert(){ hide(alertBox); }
+
+    document.addEventListener("change",(e)=>{
+        if(e.target && e.target.name==="mode"){
+            const byId = e.target.value==="byId";
+            $("uuid").disabled = !byId;
+            if(!byId) $("uuid").value = "";
+        }
+    });
+
+    function summaryForResource(r){
+        const rt = r.resourceType;
+        if(rt==="Patient"){
+            const name = (r.name?.[0]?.text) || [ ...(r.name?.[0]?.given||[]), r.name?.[0]?.family||"" ].join(" ").trim();
+            return `${renderRow("Nombre",name)}${renderRow("Género",r.gender)}${renderRow("Nacimiento",r.birthDate)}${renderRow("Identificadores",(r.identifier||[]).map(i=>`${i.system||""} ${i.value||""}`).join(" · "))}`;
+        }
+        if(rt==="Practitioner"){
+            const name = (r.name?.[0]?.text) || [ ...(r.name?.[0]?.given||[]), r.name?.[0]?.family||"" ].join(" ").trim();
+            const spec = r.qualification?.[0]?.code?.text || r.qualification?.[0]?.code?.coding?.[0]?.display;
+            const email = (r.telecom||[]).find(t=>t.system==="email")?.value;
+            return `${renderRow("Nombre",name)}${renderRow("Email",email)}${renderRow("Especialidad",spec)}`;
+        }
+        if(rt==="DiagnosticReport"){
+            const forms=(r.presentedForm||[]).map(att=>{
+                if(att.data){ const href=`data:${att.contentType||"application/octet-stream"};base64,${att.data}`; return `<a download="${att.title||"file"}" href="${href}">${att.title||"adjunto"}</a> (${att.size||"-"} bytes)`; }
+                if(att.url){ return `<a href="${att.url}" target="_blank" rel="noreferrer">${att.title||att.url}</a>`; }
+                return att.title||"adjunto";
+            }).join(" · ");
+            return `${renderRow("Código",r.code?.text||r.code?.coding?.[0]?.display)}${renderRow("Estado",r.status)}${renderRow("Efectivo",fmtDate(r.effectiveDateTime))}${renderRow("Emitido",fmtDate(r.issued))}${renderRow("Adjuntos",forms)}`;
+        }
+        if(rt==="Observation"){
+            const valQty = r.valueQuantity ? `${r.valueQuantity.value} ${r.valueQuantity.unit||""}` : null;
+            const valCC  = r.valueCodeableConcept?.text || r.valueCodeableConcept?.coding?.[0]?.display;
+            return `${renderRow("Categoría",r.category?.[0]?.coding?.[0]?.display)}${renderRow("Código",r.code?.text||r.code?.coding?.[0]?.display)}${renderRow("Valor", valQty || valCC || r.valueString || r.valueDateTime || "")}${renderRow("Efectivo",fmtDate(r.effectiveDateTime))}${renderRow("Emitido",fmtDate(r.issued))}`;
+        }
+        if(rt==="QuestionnaireResponse"){
+            const items=(r.item||[]).map(it=>{
+                const a=it.answer?.[0]; const v=a?.valueString ?? a?.valueBoolean ?? a?.valueInteger ?? a?.valueDate ?? a?.valueCoding?.display ?? "";
+                return `<div style="border:1px solid #e2e8f0;border-radius:.5rem;padding:.4rem .6rem;margin:.2rem 0;">
+        <div style="font-weight:600;font-size:.85rem;">${it.text||it.linkId}</div>
+        <div style="color:#475569;font-size:.85rem;">${v}</div>
+      </div>`;
+            }).join(""); return items;
+        }
+        if(rt==="Encounter"){ return `${renderRow("Estado",r.status)}${renderRow("Inicio",fmtDate(r.period?.start))}${renderRow("Fin",fmtDate(r.period?.end))}`; }
+        if(rt==="Communication"){
+            const payload=r.payload?.[0]; let content="";
+            if(payload?.contentString) content=payload.contentString;
+            if(payload?.contentAttachment?.data){
+                const href=`data:${payload.contentAttachment.contentType||"application/octet-stream"};base64,${payload.contentAttachment.data}`;
+                content=`<a download="${payload.contentAttachment.title||"transcript.json"}" href="${href}">Descargar transcripto</a>`;
+            }
+            return `${renderRow("Estado",r.status)}${renderRow("Enviado",fmtDate(r.sent))}${renderRow("Recibido",fmtDate(r.received))}${renderRow("Contenido",content)}`;
+        }
+        if(rt==="DocumentReference"){
+            const parts=(r.content||[]).map(c=>{
+                const att=c.attachment||{};
+                if(att.data){ const href=`data:${att.contentType||"application/octet-stream"};base64,${att.data}`; return `<a download="${att.title||"archivo"}" href="${href}">${att.title||"archivo"}</a> (${att.size||"-"} bytes)`; }
+                if(att.url){ return `<a href="${att.url}" target="_blank" rel="noreferrer">${att.title||att.url}</a>`; }
+                return att.title||"adjunto";
+            }).join(" · ");
+            return `${renderRow("Estado",r.status)}${renderRow("Tipo",r.type?.text||r.type?.coding?.[0]?.display)}${renderRow("Contenido",parts)}`;
+        }
+        return `<div style="color:#64748b">Recurso ${rt} aún no mapeado.</div>`;
+    }
+
+    function paintSummary(json){
+        const container=$("summary");
+        const entries = json.resourceType==="Bundle" ? (json.entry||[]).map(e=>e.resource) : [json];
+        if(entries.length===0){
+            container.innerHTML=`<div style="padding:.6rem .8rem;border:1px solid #fde68a;background:#fffbeb;border-radius:.75rem;color:#92400e">Bundle vacío</div>`;
+            return;
+        }
+        container.innerHTML = entries.map(r => `
+    <div style="background:#fff;border:1px solid #e2e8f0;border-radius:1rem;padding:12px;margin:10px 0;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+        <div style="font-weight:700">${r.resourceType}${r.id?` / ${r.id}`:""}</div>
+        <div style="color:#94a3b8;font-size:.8rem;">${r.meta?.profile?.[0]||""}</div>
+      </div>
+      ${summaryForResource(r)}
+    </div>
+  `).join("");
+    }
+
+    // ---- consulta /fhir/
+    $("btnFetch").addEventListener("click", async ()=>{
+        if(!getUser()){ updateUIByAuth(); return; }
+        clearAlert();
+        const entidad = document.getElementById("entity").value;
+        const mode = currentMode();
+        const uuid = $("uuid").value.trim();
+
+        let url = `/fhir/${entidad}`;
+        if(mode==="all") url += `/all`;
+        else {
+            if(!uuid){ showInline($("alert"), "Por favor escribe un UUID.","error"); return; }
+            url += `/${uuid}`;
+        }
+
+        try{
+            showInline($("alert"), "Consultando…");
+            const res = await fetch(url, {
+                headers: { "Accept": "application/fhir+json, application/json" }
+            });
+            if(!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+            const json = await res.json();
+            $("jsonView").textContent = JSON.stringify(json, null, 2);
+            paintSummary(json);
+            showInline($("alert"), "Listo ✅","ok");
+        }catch(err){
+            console.error(err);
+            showInline($("alert"), `Error: ${err.message || err}`, "error");
+        }
+    });
+
+    document.addEventListener("change",(e)=>{
+        if(e.target && e.target.name==="mode"){
+            const byId = e.target.value==="byId";
+            $("uuid").disabled = !byId;
+            if(!byId) $("uuid").value = "";
+        }
+    });
+    /*]]>*/
+</script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+/* ===================================================================================
+CSS de la barra de Navegación, del formato en General y del  Footer.
+ ====================================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Hace que html y body ocupen el 100% de la altura de la ventana */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto Condensed',sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+/* ===== Navbar ===== */
+
+/* Navbar look & feel */
+.navbar { background:#fff; }
+.navbar-brand img { height:60px; object-fit:contain; }
+
+/* enlaces */
+.navbar .nav-link {
+  color:#002856;
+  text-decoration:none;
+  padding:8px 12px;
+  font-weight:500;
+  font-size:1.4rem;
+  border-radius:6px;
+   padding: .45rem .9rem; /* un poco más de aire horizontal */
+}
+.navbar .nav-link:hover { background:rgba(0,0,0,0.04); }
+.navbar .nav-link.active { color:#a51008; }
+
+/* borde inferior sutil (opcional) */
+.navbar.border-bottom { border-color:#e6eef8 !important; }
+
+
+
+/*======== Sección del Hero ========*/
+.hero-qs {
+  position: relative;
+  background: url('/images/fondo_banner.jpg') center/cover no-repeat;
+  min-height: 230px;
+  padding: 45px 20px;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,.25);
+  color: #fff; /* asegura que las letras sean blancas */
+  text-align: center;
+  z-index: 1;
+}
+
+/* Capa de oscurecimiento (overlay) */
+.hero-qs::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45); /* oscurece la imagen (ajustar 0.45 a gusto) */
+  border-radius: 0 0 12px 12px;
+  z-index: -1; /* se coloca detrás del texto */
+}
+
+.hero-qs h1 {
+  font-size: 2rem;
+}
+
+.hero-qs p {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ===== Contenido principal ===== */
+main {
+    flex: 1; /* Esto empuja el footer al fondo */
+    padding: 20px;
+}
+
+/* ===== Footer ===== */
+.footer {
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.footer a {
+    color: #66b2ff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Titulares ===== */
+h1, h2, h3 {
+    color: #121249;
+}
+
+/* Separadores y columna solo en colapsado (<1200px) */
+@media (max-width: 1199.98px) {
+  .navbar-collapse .navbar-nav { flex-direction: column; }
+  .navbar-collapse .nav-item:not(:last-child) { border-bottom: 1px solid #e5e5e5; }
+  .navbar-collapse .nav-link { padding: 12px 0; }
+}
+
+/* Logos responsive por escalón Bootstrap */
+.navbar-brand img { height: 60px; object-fit: contain; }
+@media (max-width: 991.98px) { .navbar-brand img { height: 54px; } }   /* lg↓ */
+@media (max-width: 767.98px) { .navbar-brand img { height: 48px; } }   /* md↓ */
+@media (max-width: 575.98px) { .navbar-brand img { height: 42px; } }   /* sm↓ */
+
+
+/* logos y separación */
+.brand-img { height: 60px; object-fit: contain; }
+.brand-logos { gap: .25rem; }                 /* móviles */
+@media (min-width: 992px) {                    /* LG+  */
+  .brand-logos { gap: 1.5rem; }
+}
+
+/* botón con “aire” al borde derecho en móviles */
+.navbar .navbar-toggler { margin-right: .75rem; }  /* ~me-3 */
+
+/* --- Logos y toggler, comportamiento fino por breakpoint --- */
+
+/* xs (<= 400px aprox): logos apilados, más pequeños */
+@media (max-width: 400px) {
+  .brand-logos {
+    flex-direction: column !important;
+    gap: .25rem;
+  }
+  .brand-img { height: 40px; }          /* antes 42–48 */
+  .navbar .navbar-toggler { margin-right: .5rem; }
+}
+
+/* sm “estrecho” (401–575px): aún en columna pero un poco más grandes */
+@media (min-width: 401px) and (max-width: 575.98px) {
+  .brand-logos {
+    flex-direction: column !important;
+    gap: .3rem;
+  }
+  .brand-img { height: 46px; }
+  .navbar .navbar-toggler { margin-left: auto; margin-right: .75rem; }
+}
+
+/* sm “normal” (576–767px): ya en fila, con altura moderada */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .brand-logos {
+    flex-direction: row !important;
+    gap: .75rem;
+  }
+  .brand-img { height: 50px; }
+  .navbar .navbar-toggler { margin-left: auto; margin-right: .75rem; }
+}
+
+/* md (768–991px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .brand-logos { gap: 1rem; }
+  .brand-img { height: 54px; }
+}
+
+/* lg+ (>=992px) */
+@media (min-width: 992px) {
+  .brand-logos { gap: 1.5rem; }
+  .brand-img { height: 60px; }
+}
+
+/* Evita que el ancla de marca se “achique” cuando falta espacio */
+.navbar-brand { flex-shrink: 0; }
+
+/* Asegura que el botón quede pegado a la derecha en colapsado */
+.navbar .navbar-toggler { margin-left: auto; }
+
+/* --- Tamaño y espaciado de los links --- */
+
+/* Base (móvil): un poco más pequeño para que no se amontonen */
+.navbar .nav-link {
+  font-size: 1.05rem;
+  padding: .5rem .85rem;
+}
+
+/* md+ (>=768px) */
+@media (min-width: 768px) {
+  .navbar .nav-link {
+    font-size: 1.2rem;
+    padding: .55rem 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navbar .nav-link { font-size: 1.25rem; }
+}
+
+@media (min-width: 768px) {
+  .navbar-nav { gap: 1rem; } /* ~gap-3 */
+}

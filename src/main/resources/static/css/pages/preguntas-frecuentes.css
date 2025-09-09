@@ -1,0 +1,43 @@
+
+
+/* Pequeños detalles visuales */
+.section-title{ position: relative; }
+.section-title::after{
+  content:""; display:block; width:56px; height:3px; border-radius:3px;
+  background: #0d4ea6; margin-top:8px;
+}
+
+/* Lista de timestamps */
+/* Lista de timestamps en 2 columnas */
+.timestamp-list{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: .75rem;
+}
+
+.timestamp-item{
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+  padding:.5rem .75rem;
+  border-radius:.5rem;
+  background:#f5f7fb;
+  cursor:pointer;
+  transition:background .2s ease;
+}
+
+.timestamp-item:hover{ background:#e9eef9; }
+
+.timestamp-item .time{
+  font-weight:700;
+  background:#0d4ea6;
+  color:#fff;
+  border-radius:.35rem;
+  padding:.15rem .5rem;
+  min-width:64px;
+  text-align:center;
+}
+
+/* Soporte card */
+.support-cta .btn-success{ background:#25D366; border-color:#25D366; }
+.support-cta .btn-success:hover{ filter:brightness(.95); }

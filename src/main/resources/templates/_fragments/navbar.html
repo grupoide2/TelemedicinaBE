@@ -1,0 +1,64 @@
+<th:block xmlns:th="http://www.thymeleaf.org" th:fragment="navbar(active)">
+    <nav class="navbar navbar-expand-xl navbar-light bg-white border-bottom py-2">
+        <div class="container-xl">
+            <!-- Marca: 2 logos -->
+            <div class="brand-logos d-flex flex-column flex-sm-row align-items-start gap-1">
+                <!-- Logo UCUENCA -->
+                <a href="https://www.ucuenca.edu.ec/" target="_blank" rel="noopener" class="navbar-brand">
+                    <img src="/images/logo.png" alt="UCUENCA" class="brand-img">
+                </a>
+
+                <!-- Logo CLIAS -->
+                <a href="https://clias.iecs.org.ar/" target="_blank" rel="noopener" class="navbar-brand">
+                    <img src="/images/clias.png" alt="CLIAS" class="brand-img">
+                </a>
+            </div>
+
+
+            <!-- Botón hamburguesa, alineado a la derecha con padding -->
+            <button class="navbar-toggler ms-auto me-2 me-sm-3 d-xl-none" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#primaryNav"
+                    aria-controls="primaryNav" aria-expanded="false"
+                    aria-label="Alternar navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menú -->
+            <div class="collapse navbar-collapse justify-content-xl-end" id="primaryNav">
+                <ul class="navbar-nav align-items-xl-center nav-gap">
+                    <li class="nav-item">
+                        <a class="nav-link" th:classappend="${active}=='home' ? ' active'"
+                           th:href="@{/}">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:classappend="${active}=='qs' ? ' active'"
+                           th:href="@{/quienes-somos}">¿Quiénes somos?</a>
+                    </li>
+                    <li class="nav-item dropdown d-flex align-items-center">
+                        <!-- enlace principal que navega -->
+                        <a class="nav-link"
+                           th:href="@{/proyecto}"
+                           th:classappend="${active}=='proyecto' ? ' active'">
+                            Proyecto
+                        </a>
+
+                        <!-- caret que abre el dropdown -->
+                        <a class="nav-link dropdown-toggle dropdown-toggle-split"
+                           href="javascript:void(0)" data-bs-toggle="dropdown" aria-expanded="false"></a>
+
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" th:href="@{/preguntas-frecuentes}">Preguntas Frecuentes</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" th:classappend="${active}=='contactos' ? ' active'"
+                           th:href="@{/contactos}">Contáctanos</a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+</th:block>

@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="es" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-dev/frontend_app/modulos_principales" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.8.1">
+<title data-rh="true">App Móvil SISA - Módulos Principales | Documentación del Proyecto</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://clias.ucuenca.edu.ec/docs/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://clias.ucuenca.edu.ec/docs/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://clias.ucuenca.edu.ec/docs/dev/frontend_app/modulos_principales"><meta data-rh="true" property="og:locale" content="es"><meta data-rh="true" name="docusaurus_locale" content="es"><meta data-rh="true" name="docsearch:language" content="es"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="App Móvil SISA - Módulos Principales | Documentación del Proyecto"><meta data-rh="true" name="description" content="Esta sección describe qué hace cada módulo, qué servicios intervienen y qué debe conocer un desarrollador para mantener o extender la app. No repite implementación línea a línea: se enfoca en responsabilidades, flujos y puntos de integración."><meta data-rh="true" property="og:description" content="Esta sección describe qué hace cada módulo, qué servicios intervienen y qué debe conocer un desarrollador para mantener o extender la app. No repite implementación línea a línea: se enfoca en responsabilidades, flujos y puntos de integración."><link data-rh="true" rel="icon" href="/docs/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://clias.ucuenca.edu.ec/docs/dev/frontend_app/modulos_principales"><link data-rh="true" rel="alternate" href="https://clias.ucuenca.edu.ec/docs/dev/frontend_app/modulos_principales" hreflang="es"><link data-rh="true" rel="alternate" href="https://clias.ucuenca.edu.ec/docs/dev/frontend_app/modulos_principales" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Manual de Desarrollador","item":"https://clias.ucuenca.edu.ec/docs/category/manual-de-desarrollador"},{"@type":"ListItem","position":2,"name":"Módulos Principales","item":"https://clias.ucuenca.edu.ec/docs/dev/frontend_app/modulos_principales"}]}</script><link rel="stylesheet" href="/docs/assets/css/styles.aadc4ef1.css">
+<script src="/docs/assets/js/runtime~main.f19bda7d.js" defer="defer"></script>
+<script src="/docs/assets/js/main.698e21f0.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t="light";var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",e||t),document.documentElement.setAttribute("data-theme-choice",e||t)}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Saltar al contenido principal"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Saltar al contenido principal</a></div><nav aria-label="Principal" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Alternar barra lateral" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/docs/"></a><div class="navbar__item">
+            <div style="display:flex; align-items:center; gap:8px;">
+              <a href="https://www.ucuenca.edu.ec" target="_blank" rel="noopener noreferrer">
+                <img src="/docs/img/logos/logo.png" alt="Logo UCuenca" style="height:48px;">
+              </a>
+              <a href="https://clias.ucuenca.edu.ec" target="_blank" rel="noopener noreferrer">
+                <img src="/docs/img/logos/clias.png" alt="Logo CLIAS" style="height:48px;">
+              </a>
+            </div>
+          </div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Volver al principio" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Barra lateral de Documentos" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/">Documentación Oficial</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/manual-de-administrador-web">Manual de Administrador (Web)</a><button aria-label="Colapsar categoría &#x27;Manual de Administrador (Web)&#x27; de la barra lateral" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/admin/intro">Introducción para Administradores</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/admin/gestionar_usuarios">Gestionar Usuarios</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/admin/status_dispositivos">Status de Dispositivos</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/admin/generacion_codigos">Generación de Códigos</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/admin/servicios_relacionados">Localización de Servicios Relacionados</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/manual-de-usuario-app-móvil">Manual de Usuario (App Móvil)</a><button aria-label="Ampliar la categoría &#x27;Manual de Usuario (App Móvil)&#x27; de la barra lateral" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/docs/category/manual-de-desarrollador">Manual de Desarrollador</a><button aria-label="Colapsar categoría &#x27;Manual de Desarrollador&#x27; de la barra lateral" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/dev/intro">Introducción para Desarrolladores</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/dev/Backend/description">Backend</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/dev/Notificaciones/description">Notificaciones para desarrolladores</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/dev/chatbot/description">Chatbot</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" tabindex="0" href="/docs/dev/frontend_app/introduccion_sisa">Frontend Móvil</a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/dev/frontend_app/introduccion_sisa">Introducción</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/dev/frontend_app/arquitectura_general">Arquitectura General</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/dev/frontend_app/modulos_principales">Módulos Principales</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/dev/frontend_app/servicios_apis">Servicios y APIs</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/dev/frontend_app/notificaciones_push">Notificaciones Push</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/dev/frontend_app/configuracion_despliegue">Configuración y Despliegue</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/dev/frontend_web/description">Frontend Web</a></div></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Rastro de navegación"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Página de Inicio" class="breadcrumbs__link" href="/docs/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/docs/category/manual-de-desarrollador"><span>Manual de Desarrollador</span></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Frontend Móvil</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Módulos Principales</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">En esta página</button></div><div class="theme-doc-markdown markdown"><header><h1>Módulos Principales</h1></header>
+<blockquote>
+<p>Esta sección describe <strong>qué hace cada módulo</strong>, qué servicios intervienen y qué debe conocer un desarrollador para mantener o extender la app. No repite implementación línea a línea: se enfoca en responsabilidades, flujos y puntos de integración.</p>
+</blockquote>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="autenticación-y-gestión-de-sesión">Autenticación y gestión de sesión<a href="#autenticación-y-gestión-de-sesión" class="hash-link" aria-label="Enlace directo al Autenticación y gestión de sesión" title="Enlace directo al Autenticación y gestión de sesión">​</a></h2>
+<p><strong>Propósito:</strong> validar credenciales, emitir/renovar token y mantener la sesión segura del usuario.</p>
+<p><strong>Servicios clave:</strong> <code>auth_service.dart</code>, <code>connectivity_service.dart</code> (verificación de red), <code>notification_service.dart</code> (registro FCM tras login), <code>firebase_messaging_handler.dart</code> (recepción de mensajes).</p>
+<p><strong>Responsabilidades principales</strong></p>
+<ul>
+<li>Inicio de sesión, cierre de sesión.</li>
+<li>Almacenamiento seguro de <code>token</code>, <code>publicId</code>, <code>deviceId</code> en <strong>SecureStorage</strong>.</li>
+<li>Renovación/validación de sesión (token) de forma transparente.</li>
+<li>Registro/actualización del <strong>token FCM</strong> tras un login exitoso.</li>
+</ul>
+<p><strong>Entradas / Salidas</strong></p>
+<ul>
+<li><strong>Entrada:</strong> usuario, contraseña, <code>appVersion</code>.</li>
+<li><strong>Salida:</strong> objeto de sesión (ids + token) y estado autenticado en la UI.</li>
+</ul>
+<p><strong>Errores comunes</strong></p>
+<ul>
+<li>401/403: limpiar sesión y redirigir a <strong>Login</strong>.</li>
+<li>Timeout/red: informar al usuario y permitir reintentos.</li>
+<li>Incompatibilidad de versión: bloquear con mensaje claro si el backend lo exige.</li>
+</ul>
+<p><strong>Seguridad</strong></p>
+<ul>
+<li>Token en cabecera para todas las llamadas autenticadas.</li>
+<li>Nunca registrar en logs <code>token</code> ni contraseñas.</li>
+<li>Usar <code>SecureStorage</code> para persistir credenciales.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="gestión-de-pacientes">Gestión de pacientes<a href="#gestión-de-pacientes" class="hash-link" aria-label="Enlace directo al Gestión de pacientes" title="Enlace directo al Gestión de pacientes">​</a></h2>
+<p><strong>Propósito:</strong> CRUD de pacientes y acceso a su información clínica relevante para la app.</p>
+<p><strong>Servicios clave:</strong> <code>paciente_service.dart</code>, <code>archivo_service.dart</code> (adjuntos), <code>resultado_service.dart</code> (resultados vinculados).</p>
+<p><strong>Responsabilidades principales</strong></p>
+<ul>
+<li>Crear/actualizar datos del paciente asociados a la cuenta de usuario.</li>
+<li>Consultar información resumida (dashboard) y detalle bajo demanda.</li>
+<li>Manejo de adjuntos clínicos básicos (según permisos).</li>
+</ul>
+<p><strong>Entradas / Salidas</strong></p>
+<ul>
+<li><strong>Entrada:</strong> filtros de búsqueda, identificadores del paciente.</li>
+<li><strong>Salida:</strong> modelos de paciente y colecciones para renderizar en UI.</li>
+</ul>
+<p><strong>Offline</strong></p>
+<ul>
+<li>Cachear consultas recientes y permitir lectura limitada sin conexión.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="chat-y-sesiones-de-chat">Chat y sesiones de chat<a href="#chat-y-sesiones-de-chat" class="hash-link" aria-label="Enlace directo al Chat y sesiones de chat" title="Enlace directo al Chat y sesiones de chat">​</a></h2>
+<p><strong>Propósito:</strong> brindar un canal de comunicación (con personal de salud o bot) asociado a la cuenta/episodio del paciente.</p>
+<p><strong>Servicios clave:</strong> <code>chat_service.dart</code>, <code>sesion_chat_service.dart</code>, <code>notification_service.dart</code> (notificaciones nuevas/replies).</p>
+<p><strong>Responsabilidades principales</strong></p>
+<ul>
+<li>Crear/gestionar <strong>sesiones de chat</strong> y su historial.</li>
+<li>Enviar/recibir mensajes, manejar estados (entregado/leído).</li>
+</ul>
+<p><strong>Consideraciones</strong></p>
+<ul>
+<li>El chat debe reaccionar a <strong>push</strong> (mensaje nuevo) mediante <code>firebase_messaging_handler.dart</code> → <code>notification_state.dart</code> → refresco de UI.</li>
+<li>Manejo de adjuntos: usar <code>archivo_service.dart</code> si aplica.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="notificaciones-push-fcm">Notificaciones push (FCM)<a href="#notificaciones-push-fcm" class="hash-link" aria-label="Enlace directo al Notificaciones push (FCM)" title="Enlace directo al Notificaciones push (FCM)">​</a></h2>
+<p><strong>Propósito:</strong> informar eventos críticos (resultados disponibles, recordatorios, nuevos recursos o mensajes).</p>
+<p><strong>Servicios clave:</strong> <code>notification_service.dart</code>, <code>firebase_messaging_handler.dart</code>, <code>notification_state.dart</code>.</p>
+<p><strong>Flujo resumido</strong></p>
+<ol>
+<li>Backend envía notificación → <strong>FCM</strong>.</li>
+<li>FCM entrega al dispositivo (foreground/background/terminated).</li>
+<li><code>firebase_messaging_handler.dart</code> normaliza el mensaje.</li>
+<li><code>notification_state.dart</code> actualiza la UI (banners, badges, navegación).</li>
+</ol>
+<p><strong>Buenas prácticas</strong></p>
+<ul>
+<li>Registrar/actualizar el <strong>token FCM</strong> en login.</li>
+<li>Manejar <em>deep-links</em> o rutas para abrir pantallas específicas.</li>
+<li>Registrar interacciones del usuario (tocar notificación, descartar).</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="encuestas-y-formularios">Encuestas y formularios<a href="#encuestas-y-formularios" class="hash-link" aria-label="Enlace directo al Encuestas y formularios" title="Enlace directo al Encuestas y formularios">​</a></h2>
+<p><strong>Propósito:</strong> recolectar datos de salud y <strong>socioeconómicos</strong> con formularios estructurados.</p>
+<p><strong>Servicios clave:</strong> <code>encuesta_service.dart</code>, <code>inf_socioeconomica_service.dart</code>.</p>
+<p><strong>Responsabilidades principales</strong></p>
+<ul>
+<li>Renderizar formularios y validar campos.</li>
+<li>Guardar borradores en <strong>cache</strong> para modo offline.</li>
+<li>Enviar respuestas al backend y manejar estados (pendiente/enviado).</li>
+</ul>
+<p><strong>Errores y recuperación</strong></p>
+<ul>
+<li>Sin conexión: guardar en cola para sincronización posterior.</li>
+<li>Validación: feedback rápido en campo (requeridos, formatos).</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="resultados-y-recursos-médicos">Resultados y recursos médicos<a href="#resultados-y-recursos-médicos" class="hash-link" aria-label="Enlace directo al Resultados y recursos médicos" title="Enlace directo al Resultados y recursos médicos">​</a></h2>
+<p><strong>Propósito:</strong> exponer resultados de exámenes y materiales de apoyo (recursos, guías).</p>
+<p><strong>Servicios clave:</strong> <code>resultado_service.dart</code>, <code>resource_service.dart</code>.</p>
+<p><strong>Responsabilidades principales</strong></p>
+<ul>
+<li>Consultar listado y detalle de resultados (con control de acceso).</li>
+<li>Descargar/visualizar recursos complementarios (PDFs, guías).</li>
+</ul>
+<p><strong>UI/UX sugerido</strong></p>
+<ul>
+<li>Distinción visual por <strong>estado</strong> del resultado (nuevo, visto).</li>
+<li>Acciones rápidas: <strong>ver</strong>, <strong>descargar</strong>, <strong>compartir</strong> (si la política lo permite).</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ubicación-y-mapas">Ubicación y mapas<a href="#ubicación-y-mapas" class="hash-link" aria-label="Enlace directo al Ubicación y mapas" title="Enlace directo al Ubicación y mapas">​</a></h2>
+<p><strong>Propósito:</strong> soporte de geolocalización para flujos específicos (p.ej., localización de centros, trazabilidad de dispositivos o eventos).</p>
+<p><strong>Servicios clave:</strong> <code>ubicacion_service.dart</code>.</p>
+<p><strong>Responsabilidades principales</strong></p>
+<ul>
+<li>Obtener coordenadas del dispositivo (previo consentimiento).</li>
+<li>Enviar/consultar ubicaciones asociadas a entidades (usuario, evento, recurso).</li>
+</ul>
+<p><strong>Privacidad</strong></p>
+<ul>
+<li>Solicitar permisos explícitos y justificar su uso en la UI.</li>
+<li>Minimizar persistencia local de geodatos y aplicar políticas de retención.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="archivos-y-adjuntos">Archivos y adjuntos<a href="#archivos-y-adjuntos" class="hash-link" aria-label="Enlace directo al Archivos y adjuntos" title="Enlace directo al Archivos y adjuntos">​</a></h2>
+<p><strong>Propósito:</strong> subir y descargar archivos clínicos vinculados a formularios y resultados.</p>
+<p><strong>Servicios clave:</strong> <code>archivo_service.dart</code>, <code>resource_service.dart</code> (recursos estáticos), <code>connectivity_service.dart</code> (reintentos).</p>
+<p><strong>Flujos típicos</strong></p>
+<ul>
+<li><strong>Upload</strong> desde formularios o chat (si aplica), con barra de progreso y reintentos.</li>
+<li><strong>Download</strong> de informes/guías con manejo de permisos del SO.</li>
+</ul>
+<p><strong>Recomendaciones</strong></p>
+<ul>
+<li>Limitar tamaños y tipos de archivos permitidos por política.</li>
+<li>Reintentos exponenciales en fallos de red.</li>
+<li>Limpiar temporales tras completar operaciones.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="tabla-resumen-módulo--servicios">Tabla resumen (módulo → servicios)<a href="#tabla-resumen-módulo--servicios" class="hash-link" aria-label="Enlace directo al Tabla resumen (módulo → servicios)" title="Enlace directo al Tabla resumen (módulo → servicios)">​</a></h2>
+<table><thead><tr><th>Módulo</th><th>Servicios involucrados</th></tr></thead><tbody><tr><td>Autenticación y sesión</td><td><code>auth_service.dart</code>, <code>notification_service.dart</code>, <code>firebase_messaging_handler.dart</code>, <code>connectivity_service.dart</code></td></tr><tr><td>Gestión de pacientes</td><td><code>paciente_service.dart</code>, <code>archivo_service.dart</code>, <code>resultado_service.dart</code></td></tr><tr><td>Chat y sesiones</td><td><code>chat_service.dart</code>, <code>sesion_chat_service.dart</code>, <code>notification_service.dart</code></td></tr><tr><td>Notificaciones push</td><td><code>notification_service.dart</code>, <code>firebase_messaging_handler.dart</code>, <code>notification_state.dart</code></td></tr><tr><td>Encuestas y formularios</td><td><code>encuesta_service.dart</code>, <code>inf_socioeconomica_service.dart</code></td></tr><tr><td>Resultados y recursos</td><td><code>resultado_service.dart</code>, <code>resource_service.dart</code></td></tr><tr><td>Ubicación y mapas</td><td><code>ubicacion_service.dart</code></td></tr><tr><td>Archivos y adjuntos</td><td><code>archivo_service.dart</code>, <code>resource_service.dart</code>, <code>connectivity_service.dart</code></td></tr></tbody></table>
+<hr>
+<p><strong>Checklist para desarrolladores</strong></p>
+<ul>
+<li>¿Este flujo requiere autenticación? → usar <code>auth_service</code> + token en cabeceras.</li>
+<li>¿Debe funcionar offline? → cache/borradores + cola de sincronización.</li>
+<li>¿Se deben disparar notificaciones o <em>deep-links</em>? → <code>notification_service</code> + handler.</li>
+<li>¿Hay datos sensibles? → cifrado en tránsito, <strong>SecureStorage</strong> en reposo.</li>
+<li>¿Se necesitan permisos del SO? → solicitar, justificar, degradar funcionalidad si se niegan.</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Página del documento"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/dev/frontend_app/arquitectura_general"><div class="pagination-nav__sublabel">Anterior</div><div class="pagination-nav__label">Arquitectura General</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/dev/frontend_app/servicios_apis"><div class="pagination-nav__sublabel">Siguiente</div><div class="pagination-nav__label">Servicios y APIs</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#autenticación-y-gestión-de-sesión" class="table-of-contents__link toc-highlight">Autenticación y gestión de sesión</a></li><li><a href="#gestión-de-pacientes" class="table-of-contents__link toc-highlight">Gestión de pacientes</a></li><li><a href="#chat-y-sesiones-de-chat" class="table-of-contents__link toc-highlight">Chat y sesiones de chat</a></li><li><a href="#notificaciones-push-fcm" class="table-of-contents__link toc-highlight">Notificaciones push (FCM)</a></li><li><a href="#encuestas-y-formularios" class="table-of-contents__link toc-highlight">Encuestas y formularios</a></li><li><a href="#resultados-y-recursos-médicos" class="table-of-contents__link toc-highlight">Resultados y recursos médicos</a></li><li><a href="#ubicación-y-mapas" class="table-of-contents__link toc-highlight">Ubicación y mapas</a></li><li><a href="#archivos-y-adjuntos" class="table-of-contents__link toc-highlight">Archivos y adjuntos</a></li><li><a href="#tabla-resumen-módulo--servicios" class="table-of-contents__link toc-highlight">Tabla resumen (módulo → servicios)</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">
+        <div style="text-align: center; line-height: 1.6;">
+          Universidad de Cuenca – Grupo de Investigación en Infraestructura de Datos Espaciales<br>
+          Facultad de Ingeniería. Departamento de Ciencias de la Computación<br>
+          Campus Balzay - Víctor Manuel Albornoz y Av. de los Cerezos (Bloque A) | Teléfono: +593 7 413 4520 ext. 4790<br>
+          Ing. Villie Morocho, PhD. | <a href="mailto:gi.ide@ucuenca.edu.ec">gi.ide@ucuenca.edu.ec</a><br><br>
+          &copy; 2025 Universidad de Cuenca
+        </div>
+      </div></div></div></footer></div>
+</body>
+</html>

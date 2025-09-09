@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="_fragments/head :: head(
+        'CLIAS | SISA – Inicio',
+        ~{::link}
+     )">
+    <link rel="stylesheet" href="/css/pages/home.css"/>
+</head>
+<body>
+<header th:replace="_fragments/navbar :: navbar(${active})"></header>
+
+<main class="container-fluid p-0">
+    <section class="hero" aria-label="Banner principal SISA">
+        <picture>
+            <!-- Desktop (≥ 992px) -->
+            <source media="(min-width: 992px)" srcset="/images/bannerM_a.png">
+            <!-- Tablet/Móvil medio (≥ 450px y < 992px) -->
+            <source media="(min-width: 480px)" srcset="/images/bannerM_b.png">
+            <!-- Móvil pequeño (< 450px) -->
+            <img src="/images/bannerM_c.png" alt="Banner SISA" class="hero-img">
+        </picture>
+    </section>
+
+    <!-- 🔶 Banner jornada gratuita VPH (agregado justo después de la imagen) -->
+    <section id="aviso-vph" style="
+      background: linear-gradient(135deg, #0ea5e9 0%, #22c55e 100%);
+      color:#fff; padding: 1.25rem 0;">
+      <div style="max-width:1100px;margin:0 auto;padding:0 1rem;
+                  display:flex;gap:1rem;align-items:center;flex-wrap:wrap;">
+        <div aria-hidden="true" style="
+            display:flex;align-items:center;justify-content:center;
+            width:56px;height:56px;border-radius:14px;
+            background: rgba(255,255,255,.18); font-size:1.5rem; line-height:1;">
+          💚
+        </div>
+        <div style="flex:1; min-width:240px;">
+          <p style="margin:0 0 .2rem;font-weight:700;letter-spacing:.06em;
+                    font-size:.8rem;opacity:.9;text-transform:uppercase;">
+            AVISO IMPORTANTE
+          </p>
+          <h2 style="margin:0;font-size:1.35rem;line-height:1.25;font-weight:800;">
+            Jornada gratuita de detección del VPH
+          </h2>
+          <p style="margin:.35rem 0 0;font-size:1rem;font-weight:500;">
+            <strong>Domingo 7 de septiembre de 2025 · 9h30</strong> —
+            <span>GAD Parroquial de Baños</span>
+          </p>
+          <p style="margin:.25rem 0 0;font-size:.95rem;opacity:.95;">
+            Actividad gratuita, abierta a la comunidad.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- 🔶 /Banner -->
+
+    <!-- Sección del Carrusel-->
+    <section class="container my-5">
+        <h2 class="text-center mb-4 text-danger fw-bold">Actividades del Proyecto</h2>
+
+        <div id="actividadesCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-wrap="true">
+
+            <!-- indicadores (puntos abajo) -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#actividadesCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#actividadesCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#actividadesCarousel" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#actividadesCarousel" data-bs-slide-to="3"></button>
+            </div>
+
+            <!-- fotos -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/images/activities/actividad1.jpg" class="d-block mx-auto carousel-img" alt="Actividad 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="/images/activities/actividad2.jpg" class="d-block mx-auto carousel-img" alt="Actividad 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="/images/activities/actividad3.jpg" class="d-block mx-auto carousel-img" alt="Actividad 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="/images/activities/actividad4.jpg" class="d-block mx-auto carousel-img" alt="Actividad 4">
+                </div>
+
+            </div>
+
+            <!-- controles flechas -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#actividadesCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#actividadesCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Descarga estilo Google Play -->
+    <section class="download-play py-5">
+        <div class="container">
+            <div class="row align-items-center g-4">
+
+                <!-- Columna texto/acciones -->
+                <div class="col-lg-5 text-center text-lg-start">
+                    <h2 class="fw-bold mb-3 title-white">Descarga la aplicación SISA</h2>
+                    <p class="lead mb-4">
+                        Accede a todas las funcionalidades desde tu dispositivo móvil.
+                    </p>
+
+                    <!-- Botón descarga directa (si ya tienes el APK público) -->
+                    <a th:href="@{/proyecto} + '#descarga'" class="btn btn-success btn-lg me-2">
+                        Descargar APK
+                    </a>
+
+                    <!-- Botón a la sección de descarga dentro de /proyecto (seguro para Thymeleaf) -->
+                    <a th:href="@{/proyecto}" class="btn btn-outline-light btn-lg">
+                        Más detalles
+                    </a>
+                </div>
+
+                <!-- Columna screenshots -->
+                <div class="col-lg-7">
+                    <div class="screenshots shadow-sm">
+                        <div class="screenshots-strip">
+                            <!-- Agrega/quita imágenes libremente. Nombres: /images/app/cap1.jpeg, cap2.jpeg, ... -->
+                            <img src="/images/app/cap1.jpeg" alt="Captura 1 de SISA">
+                            <img src="/images/app/cap7.jpeg" alt="Captura 7                                                                                                                                                            de SISA">
+                            <img src="/images/app/cap3.jpeg" alt="Captura 3 de SISA">
+                            <img src="/images/app/cap4.jpeg" alt="Captura 4 de SISA">
+                            <img src="/images/app/cap5.jpeg" alt="Captura 5 de SISA">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer th:replace="_fragments/footer :: footer"></footer>
+
+<!-- Script para Bootstrap !-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+</body>
+</html>

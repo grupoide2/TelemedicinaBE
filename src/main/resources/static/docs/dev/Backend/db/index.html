@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="es" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-dev/Backend/db" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.8.1">
+<title data-rh="true">Backend - Base de Datos | Documentación del Proyecto</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://clias.ucuenca.edu.ec/docs/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://clias.ucuenca.edu.ec/docs/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://clias.ucuenca.edu.ec/docs/dev/Backend/db"><meta data-rh="true" property="og:locale" content="es"><meta data-rh="true" name="docusaurus_locale" content="es"><meta data-rh="true" name="docsearch:language" content="es"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Backend - Base de Datos | Documentación del Proyecto"><meta data-rh="true" name="description" content="---"><meta data-rh="true" property="og:description" content="---"><link data-rh="true" rel="icon" href="/docs/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://clias.ucuenca.edu.ec/docs/dev/Backend/db"><link data-rh="true" rel="alternate" href="https://clias.ucuenca.edu.ec/docs/dev/Backend/db" hreflang="es"><link data-rh="true" rel="alternate" href="https://clias.ucuenca.edu.ec/docs/dev/Backend/db" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Manual de Desarrollador","item":"https://clias.ucuenca.edu.ec/docs/category/manual-de-desarrollador"},{"@type":"ListItem","position":2,"name":"Base de Datos","item":"https://clias.ucuenca.edu.ec/docs/dev/Backend/db"}]}</script><link rel="stylesheet" href="/docs/assets/css/styles.aadc4ef1.css">
+<script src="/docs/assets/js/runtime~main.f19bda7d.js" defer="defer"></script>
+<script src="/docs/assets/js/main.698e21f0.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t="light";var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",e||t),document.documentElement.setAttribute("data-theme-choice",e||t)}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Saltar al contenido principal"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Saltar al contenido principal</a></div><nav aria-label="Principal" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Alternar barra lateral" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/docs/"></a><div class="navbar__item">
+            <div style="display:flex; align-items:center; gap:8px;">
+              <a href="https://www.ucuenca.edu.ec" target="_blank" rel="noopener noreferrer">
+                <img src="/docs/img/logos/logo.png" alt="Logo UCuenca" style="height:48px;">
+              </a>
+              <a href="https://clias.ucuenca.edu.ec" target="_blank" rel="noopener noreferrer">
+                <img src="/docs/img/logos/clias.png" alt="Logo CLIAS" style="height:48px;">
+              </a>
+            </div>
+          </div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Volver al principio" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Barra lateral de Documentos" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/">Documentación Oficial</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/manual-de-administrador-web">Manual de Administrador (Web)</a><button aria-label="Colapsar categoría &#x27;Manual de Administrador (Web)&#x27; de la barra lateral" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/admin/intro">Introducción para Administradores</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/admin/gestionar_usuarios">Gestionar Usuarios</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/admin/status_dispositivos">Status de Dispositivos</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/admin/generacion_codigos">Generación de Códigos</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/admin/servicios_relacionados">Localización de Servicios Relacionados</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/manual-de-usuario-app-móvil">Manual de Usuario (App Móvil)</a><button aria-label="Ampliar la categoría &#x27;Manual de Usuario (App Móvil)&#x27; de la barra lateral" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/docs/category/manual-de-desarrollador">Manual de Desarrollador</a><button aria-label="Colapsar categoría &#x27;Manual de Desarrollador&#x27; de la barra lateral" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/dev/intro">Introducción para Desarrolladores</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" tabindex="0" href="/docs/dev/Backend/description">Backend</a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/dev/Backend/description">Introducción</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/dev/Backend/db">Base de Datos</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/dev/Backend/resources">Recursos</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/dev/Backend/web_thymeleaf">Web con thymeleaf &amp; Static Assets</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/dev/Backend/security">Seguridad</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/dev/Backend/setup">Despliegue</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/dev/Notificaciones/description">Notificaciones para desarrolladores</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/dev/chatbot/description">Chatbot</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/dev/frontend_app/introduccion_sisa">Frontend Móvil</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/dev/frontend_web/description">Frontend Web</a></div></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Rastro de navegación"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Página de Inicio" class="breadcrumbs__link" href="/docs/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/docs/category/manual-de-desarrollador"><span>Manual de Desarrollador</span></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Backend</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Base de Datos</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">En esta página</button></div><div class="theme-doc-markdown markdown"><header><h1>Backend - Base de Datos</h1></header><hr>
+<h1>Modelo de Datos</h1>
+<p>La base de datos del proyecto <strong>IA - VPH</strong> se implementa en <strong>PostgreSQL 17</strong> y organiza la información en varias tablas especializadas.<br>
+<!-- -->Aquí encontrarás la descripción de su estructura y los <strong>atributos principales</strong> de cada entidad.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="tablas">Tablas<a href="#tablas" class="hash-link" aria-label="Enlace directo al Tablas" title="Enlace directo al Tablas">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="atributos-comunes">Atributos Comunes<a href="#atributos-comunes" class="hash-link" aria-label="Enlace directo al Atributos Comunes" title="Enlace directo al Atributos Comunes">​</a></h3>
+<p>Todas las tablas incluyen:</p>
+<ul>
+<li><strong>id</strong> → Identificador secuencial interno <em>(PRIMARY KEY, AUTOINCREMENTAL)</em></li>
+<li><strong>publicId</strong> → Identificador único universal <em>(UUID, NOT NULL, UNIQUE)</em></li>
+</ul>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="cuentausuario"><code>CuentaUsuario</code><a href="#cuentausuario" class="hash-link" aria-label="Enlace directo al cuentausuario" title="Enlace directo al cuentausuario">​</a></h3>
+<p>Gestión de credenciales y control de acceso.</p>
+<ul>
+<li><strong>nombreUsuario</strong> → Nombre único de la cuenta <em>(UNIQUE, NOT NULL)</em></li>
+<li><strong>contrasena</strong> → Contraseña cifrada <em>(NOT NULL)</em></li>
+<li><strong>rol</strong> → Rol asignado <em>(USER / ADMIN / DOCTOR, DEFAULT USER)</em></li>
+<li><strong>aceptaConsentimiento</strong> → Aceptación de términos y condiciones <em>(NOT NULL)</em></li>
+<li><strong>ultimaSesion</strong> → Última vez que inició sesión</li>
+</ul>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="paciente"><code>Paciente</code><a href="#paciente" class="hash-link" aria-label="Enlace directo al paciente" title="Enlace directo al paciente">​</a></h3>
+<p>Información personal del usuario.</p>
+<ul>
+<li><strong>nombre</strong> → Nombre completo <em>(NOT NULL)</em></li>
+<li><strong>fechaNacimiento</strong> → Fecha de nacimiento <em>(NOT NULL)</em></li>
+<li><strong>pais</strong> → País de origen <em>(PaisEnum, NOT NULL)</em></li>
+<li><strong>lenguaMaterna</strong> → Idioma principal <em>(IdiomaEnum, NOT NULL)</em></li>
+<li><strong>estadoCivil</strong> → Estado civil <em>(EstadoCivilEnum, NOT NULL)</em></li>
+<li><strong>sexo</strong> → Sexo <em>(SexoEnum, NOT NULL)</em></li>
+<li><strong>identificacion</strong> → Documento de identidad</li>
+</ul>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="informacionsocioeconomica"><code>InformacionSocioeconomica</code><a href="#informacionsocioeconomica" class="hash-link" aria-label="Enlace directo al informacionsocioeconomica" title="Enlace directo al informacionsocioeconomica">​</a></h3>
+<p>Contexto social y económico del usuario.</p>
+<ul>
+<li><strong>instruccion</strong> → Nivel de estudios <em>(InstruccionEnum)</em></li>
+<li><strong>ingresos</strong> → Rango de ingresos mensuales <em>(IngresoEnum)</em></li>
+<li><strong>trabajoRemunerado</strong> → ¿Tiene empleo remunerado? <em>(OpcionesEnum)</em></li>
+<li><strong>ocupacion</strong> → Ocupación laboral</li>
+<li><strong>recibeBono</strong> → ¿Recibe ayuda económica? <em>(Boolean)</em></li>
+</ul>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="dispositivo"><code>Dispositivo</code><a href="#dispositivo" class="hash-link" aria-label="Enlace directo al dispositivo" title="Enlace directo al dispositivo">​</a></h3>
+<p>Asociación de kits de automuestreo a los usuarios.</p>
+<ul>
+<li><strong>dispositivo</strong> → Código QR del kit <em>(UNIQUE, NOT NULL)</em></li>
+<li><strong>fechaRegistro</strong> → Fecha en que fue registrado <em>(NOT NULL)</em></li>
+</ul>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="anamnesis"><code>Anamnesis</code><a href="#anamnesis" class="hash-link" aria-label="Enlace directo al anamnesis" title="Enlace directo al anamnesis">​</a></h3>
+<p>Antecedentes médicos del usuario.</p>
+<ul>
+<li><strong>edadPrimeraRelacionSexual</strong> → Edad de la primera relación sexual</li>
+<li><strong>edadPrimerExamenPap</strong> → Edad en el primer examen Papanicolaou</li>
+</ul>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="sesionchat"><code>SesionChat</code><a href="#sesionchat" class="hash-link" aria-label="Enlace directo al sesionchat" title="Enlace directo al sesionchat">​</a></h3>
+<p>Historial de sesiones de chat en el proceso de automuestreo.</p>
+<ul>
+<li><strong>inicio</strong> → Momento de inicio <em>(NOT NULL)</em></li>
+<li><strong>fin</strong> → Momento de fin <em>(NOT NULL)</em></li>
+<li><strong>contenido</strong> → Mensajes del chat <em>(TEXT, NOT NULL)</em></li>
+</ul>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="examenvph"><code>ExamenVph</code><a href="#examenvph" class="hash-link" aria-label="Enlace directo al examenvph" title="Enlace directo al examenvph">​</a></h3>
+<p>Registro de automuestreos y resultados.</p>
+<ul>
+<li><strong>fechaExamen</strong> → Fecha del automuestreo <em>(NOT NULL)</em></li>
+<li><strong>fechaResultado</strong> → Fecha del resultado</li>
+<li><strong>dispositivo</strong> → Código QR del kit <em>(UNIQUE, NOT NULL)</em></li>
+<li><strong>tipo</strong> → Tipo de archivo del resultado</li>
+<li><strong>contenido</strong> → Archivo en bytes</li>
+<li><strong>tamano</strong> → Tamaño del archivo en bytes</li>
+<li><strong>nombre</strong> → Nombre del archivo <em>(UNIQUE)</em></li>
+</ul>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="saludsexual"><code>SaludSexual</code><a href="#saludsexual" class="hash-link" aria-label="Enlace directo al saludsexual" title="Enlace directo al saludsexual">​</a></h3>
+<p>Datos relacionados con salud sexual y reproductiva.</p>
+<ul>
+<li><strong>estaEmbarazada</strong> → Si el usuario está embarazada <em>(NOT NULL)</em></li>
+<li><strong>fechaUltimaMenstruacion</strong> → Fecha del primer día de la última menstruación <em>(NOT NULL)</em></li>
+<li><strong>ultimoExamenPap</strong> → Rango de tiempo del último examen <em>(RangoTiempoEnum, NOT NULL)</em></li>
+<li><strong>tiempoPruebaVph</strong> → Rango de tiempo de la última prueba de VPH <em>(RangoTiempoEnum, NOT NULL)</em></li>
+<li><strong>numParejasSexuales</strong> → Número de parejas sexuales <em>(NOT NULL)</em></li>
+<li><strong>tieneEts</strong> → Diagnóstico o sospecha de ETS <em>(OpcionesEnum, NOT NULL)</em></li>
+<li><strong>nombreEts</strong> → Nombre de la ETS en caso afirmativo</li>
+</ul>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="evolucion"><code>Evolucion</code><a href="#evolucion" class="hash-link" aria-label="Enlace directo al evolucion" title="Enlace directo al evolucion">​</a></h3>
+<p>Registros de signos vitales.</p>
+<ul>
+<li><strong>temperatura</strong> → Valor de la temperatura</li>
+<li><strong>pulso</strong> → Valor del pulso</li>
+<li><strong>talla</strong> → Valor de la talla</li>
+<li><strong>peso</strong> → Valor del peso</li>
+</ul>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="medico"><code>Medico</code><a href="#medico" class="hash-link" aria-label="Enlace directo al medico" title="Enlace directo al medico">​</a></h3>
+<p>Datos de médicos registrados en la aplicación.</p>
+<ul>
+<li><strong>nombre</strong> → Nombre completo <em>(NOT NULL)</em></li>
+<li><strong>sexo</strong> → Sexo <em>(SexoEnum, NOT NULL)</em></li>
+<li><strong>correo</strong> → Correo electrónico <em>(NOT NULL)</em></li>
+<li><strong>especializacion</strong> → Especialidad médica <em>(NOT NULL)</em></li>
+</ul>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="archivo"><code>Archivo</code><a href="#archivo" class="hash-link" aria-label="Enlace directo al archivo" title="Enlace directo al archivo">​</a></h3>
+<p>Gestión de archivos en el servidor.</p>
+<ul>
+<li><strong>nombre</strong> → Nombre del archivo (con extensión) <em>(UNIQUE, NOT NULL)</em></li>
+<li><strong>tipo</strong> → Tipo de archivo <em>(NOT NULL)</em></li>
+<li><strong>contenido</strong> → Contenido en bytes <em>(NOT NULL)</em></li>
+<li><strong>tamano</strong> → Tamaño en bytes <em>(NOT NULL)</em></li>
+</ul>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="ubicaciones"><code>Ubicaciones</code><a href="#ubicaciones" class="hash-link" aria-label="Enlace directo al ubicaciones" title="Enlace directo al ubicaciones">​</a></h3>
+<p>Centros de salud, protección y atención psicológica.</p>
+<ul>
+<li><strong>nombre</strong> → Nombre del establecimiento <em>(NOT NULL)</em></li>
+<li><strong>direccion</strong> → Dirección física <em>(NOT NULL)</em></li>
+<li><strong>telefono</strong> → Número telefónico <em>(opcional)</em></li>
+<li><strong>horario</strong> → Horario de atención <em>(opcional)</em></li>
+<li><strong>sitioWeb</strong> → Sitio web <em>(opcional)</em></li>
+<li><strong>latitud / longitud</strong> → Coordenadas geográficas <em>(NOT NULL)</em></li>
+<li><strong>establecimiento</strong> → Tipo de centro <em>(EstablecimientoEnum, DEFAULT CENTRO_SALUD)</em></li>
+</ul>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="dispositivoappusuario"><code>DispositivoAppUsuario</code><a href="#dispositivoappusuario" class="hash-link" aria-label="Enlace directo al dispositivoappusuario" title="Enlace directo al dispositivoappusuario">​</a></h3>
+<p>Gestión de dispositivos móviles que instalan la aplicación.</p>
+<ul>
+<li><strong>usuarioPublicId</strong> → Identificador del usuario asociado al dispositivo <em>(UUID, NOT NULL)</em></li>
+<li><strong>fcmToken</strong> → Token único generado por Firebase Cloud Messaging (FCM) para enviar notificaciones push <em>(String, NOT NULL)</em></li>
+<li><strong>fechaRegistro</strong> → Fecha en que se instaló la aplicación <em>(NOT NULL)</em></li>
+</ul>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="notificacion"><code>Notificacion</code><a href="#notificacion" class="hash-link" aria-label="Enlace directo al notificacion" title="Enlace directo al notificacion">​</a></h3>
+<p>Historial de notificaciones enviadas a los usuarios.</p>
+<ul>
+<li><strong>cuentaUsuario</strong> → Relación hacia la cuenta que recibe la notificación <em>(FOREIGN KEY → CuentaUsuario, NOT NULL)</em></li>
+<li><strong>tipo_notificacion</strong> → Clasificación de la notificación <em>(TipoNotificacionEnum, NOT NULL)</em></li>
+<li><strong>titulo</strong> → Título breve mostrado en la aplicación <em>(NOT NULL)</em></li>
+<li><strong>mensaje</strong> → Contenido completo de la notificación <em>(NOT NULL)</em></li>
+<li><strong>tipo_accion</strong> → Acción asociada al clic en la notificación <em>(TipoAccionNotificacionEnum, NOT NULL)</em></li>
+<li><strong>accion</strong> → Información extra que requiere la acción <em>(Opcional)</em></li>
+<li><strong>fecha_creacion</strong> → Momento en que se generó la notificación <em>(NOT NULL)</em></li>
+<li><strong>notificacion_leida</strong> → Estado de lectura de la notificación <em>(Boolean, NOT NULL)</em></li>
+</ul>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="notificacionprogramada"><code>NotificacionProgramada</code><a href="#notificacionprogramada" class="hash-link" aria-label="Enlace directo al notificacionprogramada" title="Enlace directo al notificacionprogramada">​</a></h3>
+<p>Mecanismo para la planificación de notificaciones recurrentes.</p>
+<ul>
+<li><strong>cuentaUsuario</strong> → Relación hacia la cuenta que recibirá la notificación <em>(FOREIGN KEY → CuentaUsuario, NOT NULL)</em></li>
+<li><strong>tipo_notificacion</strong> → Clasificación de la notificación <em>(TipoNotificacionEnum, NOT NULL)</em></li>
+<li><strong>titulo</strong> → Título breve mostrado en la aplicación <em>(NOT NULL)</em></li>
+<li><strong>mensaje</strong> → Contenido completo de la notificación <em>(NOT NULL)</em></li>
+<li><strong>tipo_accion</strong> → Acción asociada al clic en la notificación <em>(TipoAccionNotificacionEnum, NOT NULL)</em></li>
+<li><strong>accion</strong> → Información extra que requiere la acción <em>(Opcional)</em></li>
+<li><strong>programacionActiva</strong> → Indica si la programación está activa o deshabilitada <em>(Boolean, NOT NULL)</em></li>
+<li><strong>fechaInicio</strong> → Fecha de inicio de la programación <em>(NOT NULL)</em></li>
+<li><strong>proxFecha</strong> → Próxima fecha/hora programada <em>(NOT NULL)</em></li>
+<li><strong>limiteFecha</strong> → Fecha límite de validez de la programación <em>(Opcional)</em></li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="tipos-enumerados-enums">Tipos Enumerados (Enums)<a href="#tipos-enumerados-enums" class="hash-link" aria-label="Enlace directo al Tipos Enumerados (Enums)" title="Enlace directo al Tipos Enumerados (Enums)">​</a></h2>
+<ul>
+<li>
+<p><strong>IdiomaEnum</strong></p>
+<ul>
+<li><code>ESPAÑOL</code></li>
+<li><code>INGLES</code></li>
+<li><code>OTRO</code></li>
+</ul>
+</li>
+<li>
+<p><strong>EstadoCivilEnum</strong></p>
+<ul>
+<li><code>SOLTERA</code></li>
+<li><code>CASADA</code></li>
+<li><code>VIUDA</code></li>
+<li><code>DIVORCIADA</code></li>
+<li><code>UNION_LIBRE</code></li>
+</ul>
+</li>
+<li>
+<p><strong>PaisEnum</strong></p>
+<ul>
+<li><code>ECUADOR</code></li>
+<li><code>COLOMBIA</code></li>
+<li><code>PERÚ</code></li>
+<li>...</li>
+</ul>
+</li>
+<li>
+<p><strong>InstruccionEnum</strong></p>
+<ul>
+<li><code>NINGUNO</code></li>
+<li><code>PRIMARIA</code></li>
+<li><code>SECUNDARIA</code></li>
+<li><code>UNIVERSITARIA</code></li>
+</ul>
+</li>
+<li>
+<p><strong>IngresoEnum</strong></p>
+<ul>
+<li><code>MENOS_450</code></li>
+<li><code>ENTRE_450_900</code></li>
+<li><code>MAS_1350</code></li>
+</ul>
+</li>
+<li>
+<p><strong>OpcionesEnum</strong></p>
+<ul>
+<li><code>SI</code></li>
+<li><code>NO</code></li>
+<li><code>NOSE</code></li>
+</ul>
+</li>
+<li>
+<p><strong>RangoTiempoEnum</strong></p>
+<ul>
+<li><code>MENOS_1_AÑO</code></li>
+<li><code>DE_1_A_3_AÑOS</code></li>
+<li><code>MAS_3_AÑOS</code></li>
+<li><code>NUNCA</code></li>
+</ul>
+</li>
+<li>
+<p><strong>EstablecimientoEnum</strong></p>
+<ul>
+<li><code>CENTRO_SALUD</code> → Centros de salud y hospitales</li>
+<li><code>CENTRO_PROTECCION</code> → Centros de protección contra la violencia</li>
+<li><code>ATENCION_PSICOLOGICA</code> → Centros de atención psicológica</li>
+</ul>
+</li>
+<li>
+<p><strong>TipoNotificacionEnum</strong></p>
+<ul>
+<li><code>RESULTADO</code></li>
+<li><code>RECORDATORIO_NO_EXAMEN</code></li>
+<li><code>RECORDATORIO_NO_ENTREGA_DISPOSITIVO</code></li>
+<li><code>BIENVENIDA</code></li>
+<li><code>NUEVO_RECURSO</code></li>
+</ul>
+</li>
+<li>
+<p><strong>TipoAccionNotificacionEnum</strong></p>
+<ul>
+<li><code>VER_RESULTADOS</code></li>
+<li><code>VER_VIDEO</code></li>
+<li><code>VENTANA_EMERGENTE</code></li>
+<li><code>VENTANA_RECURSOS</code></li>
+<li><code>AUTOMUESTREO</code></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="modelo-entidad---relación">Modelo Entidad - Relación<a href="#modelo-entidad---relación" class="hash-link" aria-label="Enlace directo al Modelo Entidad - Relación" title="Enlace directo al Modelo Entidad - Relación">​</a></h2>
+<p>A continuación se muestra el <strong>diagrama entidad-relación (ER)</strong> de la base de datos:</p>
+<p><img decoding="async" loading="lazy" alt="Modelo ER" src="/docs/assets/images/modelo-er-d3727f1e66eeb6bbb7103f642f43496d.png" width="6339" height="5315" class="img_ev3q"></p>
+<hr>
+<p>📌 <em>Este documento es la referencia oficial para el diseño y mantenimiento de la base de datos del proyecto <strong>IA - VPH</strong></em>.</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Página del documento"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/dev/Backend/description"><div class="pagination-nav__sublabel">Anterior</div><div class="pagination-nav__label">Introducción</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/dev/Backend/resources"><div class="pagination-nav__sublabel">Siguiente</div><div class="pagination-nav__label">Recursos</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#tablas" class="table-of-contents__link toc-highlight">Tablas</a><ul><li><a href="#atributos-comunes" class="table-of-contents__link toc-highlight">Atributos Comunes</a></li><li><a href="#cuentausuario" class="table-of-contents__link toc-highlight"><code>CuentaUsuario</code></a></li><li><a href="#paciente" class="table-of-contents__link toc-highlight"><code>Paciente</code></a></li><li><a href="#informacionsocioeconomica" class="table-of-contents__link toc-highlight"><code>InformacionSocioeconomica</code></a></li><li><a href="#dispositivo" class="table-of-contents__link toc-highlight"><code>Dispositivo</code></a></li><li><a href="#anamnesis" class="table-of-contents__link toc-highlight"><code>Anamnesis</code></a></li><li><a href="#sesionchat" class="table-of-contents__link toc-highlight"><code>SesionChat</code></a></li><li><a href="#examenvph" class="table-of-contents__link toc-highlight"><code>ExamenVph</code></a></li><li><a href="#saludsexual" class="table-of-contents__link toc-highlight"><code>SaludSexual</code></a></li><li><a href="#evolucion" class="table-of-contents__link toc-highlight"><code>Evolucion</code></a></li><li><a href="#medico" class="table-of-contents__link toc-highlight"><code>Medico</code></a></li><li><a href="#archivo" class="table-of-contents__link toc-highlight"><code>Archivo</code></a></li><li><a href="#ubicaciones" class="table-of-contents__link toc-highlight"><code>Ubicaciones</code></a></li><li><a href="#dispositivoappusuario" class="table-of-contents__link toc-highlight"><code>DispositivoAppUsuario</code></a></li><li><a href="#notificacion" class="table-of-contents__link toc-highlight"><code>Notificacion</code></a></li><li><a href="#notificacionprogramada" class="table-of-contents__link toc-highlight"><code>NotificacionProgramada</code></a></li></ul></li><li><a href="#tipos-enumerados-enums" class="table-of-contents__link toc-highlight">Tipos Enumerados (Enums)</a></li><li><a href="#modelo-entidad---relación" class="table-of-contents__link toc-highlight">Modelo Entidad - Relación</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">
+        <div style="text-align: center; line-height: 1.6;">
+          Universidad de Cuenca – Grupo de Investigación en Infraestructura de Datos Espaciales<br>
+          Facultad de Ingeniería. Departamento de Ciencias de la Computación<br>
+          Campus Balzay - Víctor Manuel Albornoz y Av. de los Cerezos (Bloque A) | Teléfono: +593 7 413 4520 ext. 4790<br>
+          Ing. Villie Morocho, PhD. | <a href="mailto:gi.ide@ucuenca.edu.ec">gi.ide@ucuenca.edu.ec</a><br><br>
+          &copy; 2025 Universidad de Cuenca
+        </div>
+      </div></div></div></footer></div>
+</body>
+</html>

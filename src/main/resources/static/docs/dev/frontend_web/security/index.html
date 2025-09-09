@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="es" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-dev/frontend_web/security" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.8.1">
+<title data-rh="true">Frontend Web - Seguridad (JWT) | Documentación del Proyecto</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://clias.ucuenca.edu.ec/docs/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://clias.ucuenca.edu.ec/docs/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://clias.ucuenca.edu.ec/docs/dev/frontend_web/security"><meta data-rh="true" property="og:locale" content="es"><meta data-rh="true" name="docusaurus_locale" content="es"><meta data-rh="true" name="docsearch:language" content="es"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Frontend Web - Seguridad (JWT) | Documentación del Proyecto"><meta data-rh="true" name="description" content="---"><meta data-rh="true" property="og:description" content="---"><link data-rh="true" rel="icon" href="/docs/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://clias.ucuenca.edu.ec/docs/dev/frontend_web/security"><link data-rh="true" rel="alternate" href="https://clias.ucuenca.edu.ec/docs/dev/frontend_web/security" hreflang="es"><link data-rh="true" rel="alternate" href="https://clias.ucuenca.edu.ec/docs/dev/frontend_web/security" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Manual de Desarrollador","item":"https://clias.ucuenca.edu.ec/docs/category/manual-de-desarrollador"},{"@type":"ListItem","position":2,"name":"Seguridad (JWT)","item":"https://clias.ucuenca.edu.ec/docs/dev/frontend_web/security"}]}</script><link rel="stylesheet" href="/docs/assets/css/styles.aadc4ef1.css">
+<script src="/docs/assets/js/runtime~main.f19bda7d.js" defer="defer"></script>
+<script src="/docs/assets/js/main.698e21f0.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t="light";var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",e||t),document.documentElement.setAttribute("data-theme-choice",e||t)}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Saltar al contenido principal"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Saltar al contenido principal</a></div><nav aria-label="Principal" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Alternar barra lateral" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/docs/"></a><div class="navbar__item">
+            <div style="display:flex; align-items:center; gap:8px;">
+              <a href="https://www.ucuenca.edu.ec" target="_blank" rel="noopener noreferrer">
+                <img src="/docs/img/logos/logo.png" alt="Logo UCuenca" style="height:48px;">
+              </a>
+              <a href="https://clias.ucuenca.edu.ec" target="_blank" rel="noopener noreferrer">
+                <img src="/docs/img/logos/clias.png" alt="Logo CLIAS" style="height:48px;">
+              </a>
+            </div>
+          </div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Volver al principio" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Barra lateral de Documentos" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/">Documentación Oficial</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/manual-de-administrador-web">Manual de Administrador (Web)</a><button aria-label="Colapsar categoría &#x27;Manual de Administrador (Web)&#x27; de la barra lateral" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/admin/intro">Introducción para Administradores</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/admin/gestionar_usuarios">Gestionar Usuarios</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/admin/status_dispositivos">Status de Dispositivos</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/admin/generacion_codigos">Generación de Códigos</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/admin/servicios_relacionados">Localización de Servicios Relacionados</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/manual-de-usuario-app-móvil">Manual de Usuario (App Móvil)</a><button aria-label="Ampliar la categoría &#x27;Manual de Usuario (App Móvil)&#x27; de la barra lateral" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/docs/category/manual-de-desarrollador">Manual de Desarrollador</a><button aria-label="Colapsar categoría &#x27;Manual de Desarrollador&#x27; de la barra lateral" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/dev/intro">Introducción para Desarrolladores</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/dev/Backend/description">Backend</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/dev/Notificaciones/description">Notificaciones para desarrolladores</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/dev/chatbot/description">Chatbot</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/dev/frontend_app/introduccion_sisa">Frontend Móvil</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" tabindex="0" href="/docs/dev/frontend_web/description">Frontend Web</a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/dev/frontend_web/description">Introducción</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/dev/frontend_web/structure">Estructura del Proyecto</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/dev/frontend_web/endpoints">Endpoints Principales</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/dev/frontend_web/enviroment_configuration">Configuración de Entorno</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/dev/frontend_web/security">Seguridad (JWT)</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/dev/frontend_web/setup">Despliegue de la App Web</a></li></ul></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Rastro de navegación"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Página de Inicio" class="breadcrumbs__link" href="/docs/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/docs/category/manual-de-desarrollador"><span>Manual de Desarrollador</span></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Frontend Web</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Seguridad (JWT)</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">En esta página</button></div><div class="theme-doc-markdown markdown"><header><h1>Frontend Web - Seguridad (JWT)</h1></header><hr>
+<p>El frontend web implementa la autenticación y autorización utilizando <strong>JSON Web Tokens (JWT)</strong>, gestionados por el backend en <strong>Spring Boot</strong>.</p>
+<p>Los tokens se transmiten en cada petición protegida mediante el encabezado <code>Authorization: Bearer &lt;token&gt;</code>.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="flujo-de-autenticación">Flujo de autenticación<a href="#flujo-de-autenticación" class="hash-link" aria-label="Enlace directo al Flujo de autenticación" title="Enlace directo al Flujo de autenticación">​</a></h2>
+<ol>
+<li>
+<p>El usuario inicia sesión desde el <strong>login</strong>.</p>
+</li>
+<li>
+<p>El frontend envía usuario y contraseña al endpoint:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">POST /api/auth/login</span><br></span></code></pre></div></div>
+</li>
+<li>
+<p>El backend valida las credenciales y devuelve:</p>
+<ul>
+<li>Información del usuario (perfil, nombre, rol).</li>
+<li>Un <strong>JWT</strong> en los despliegues donde está configurado.</li>
+</ul>
+</li>
+<li>
+<p>El frontend guarda el token en <code>localStorage</code> y lo incluye en cada llamada posterior.</p>
+</li>
+</ol>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ejemplo-de-uso-del-jwt">Ejemplo de uso del JWT<a href="#ejemplo-de-uso-del-jwt" class="hash-link" aria-label="Enlace directo al Ejemplo de uso del JWT" title="Enlace directo al Ejemplo de uso del JWT">​</a></h2>
+<div class="language-http codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-http codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">GET /api/estado-dispositivos?page=0&amp;size=50 HTTP/1.1</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Host: clias.ucuenca.edu.ec</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Authorization: Bearer eyJhbGciOiJIUzUxMiJ9...</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Accept: application/json</span><br></span></code></pre></div></div>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="implementación-en-el-backend">Implementación en el Backend<a href="#implementación-en-el-backend" class="hash-link" aria-label="Enlace directo al Implementación en el Backend" title="Enlace directo al Implementación en el Backend">​</a></h2>
+<ul>
+<li><strong>JwtAuthenticationFilter</strong>: extrae y valida el token en cada petición.</li>
+<li><strong>JwtUtil</strong>: genera y firma los tokens con el algoritmo HS512.</li>
+<li><strong>SecurityConfig</strong>: define rutas públicas y rutas protegidas.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="rutas-públicas">Rutas públicas<a href="#rutas-públicas" class="hash-link" aria-label="Enlace directo al Rutas públicas" title="Enlace directo al Rutas públicas">​</a></h2>
+<p>Según la configuración de seguridad del backend, algunas rutas no requieren token:</p>
+<ul>
+<li>
+<p>Recursos estáticos: <code>/web/**</code></p>
+</li>
+<li>
+<p>Autenticación: <code>/api/auth/login</code></p>
+</li>
+<li>
+<p>Preflight CORS: <code>OPTIONS /**</code></p>
+</li>
+<li>
+<p>Algunos endpoints abiertos por compatibilidad:</p>
+<ul>
+<li><code>/api/codigosqr</code></li>
+<li><code>/prueba/medico/**</code></li>
+<li><code>/api/dispositivos_registrados/**</code></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="rutas-protegidas">Rutas protegidas<a href="#rutas-protegidas" class="hash-link" aria-label="Enlace directo al Rutas protegidas" title="Enlace directo al Rutas protegidas">​</a></h2>
+<p>Todas las demás rutas <code>/api/**</code> requieren token válido y rol autorizado:</p>
+<ul>
+<li>
+<p><strong>ADMIN</strong></p>
+<ul>
+<li><code>/api/users/**</code></li>
+<li><code>/api/medicos/**</code></li>
+<li><code>/api/estado-dispositivos</code></li>
+<li><code>/api/ubicaciones/**</code></li>
+<li><code>/api/codigosqr</code> (en despliegues seguros)</li>
+</ul>
+</li>
+<li>
+<p><strong>DOCTOR</strong></p>
+<ul>
+<li><code>/prueba/medico/**</code></li>
+<li><code>/api/patients/**/results</code></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="almacenamiento-del-token-en-el-frontend">Almacenamiento del token en el Frontend<a href="#almacenamiento-del-token-en-el-frontend" class="hash-link" aria-label="Enlace directo al Almacenamiento del token en el Frontend" title="Enlace directo al Almacenamiento del token en el Frontend">​</a></h2>
+<ul>
+<li>El token JWT se guarda en <code>localStorage[&#x27;jwt&#x27;]</code>.</li>
+<li>Al enviar peticiones protegidas, se agrega en el <strong>header Authorization</strong>.</li>
+<li>Si el token expira, el backend devuelve <strong>401 Unauthorized</strong> y el frontend redirige al login.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="recomendaciones-de-seguridad">Recomendaciones de seguridad<a href="#recomendaciones-de-seguridad" class="hash-link" aria-label="Enlace directo al Recomendaciones de seguridad" title="Enlace directo al Recomendaciones de seguridad">​</a></h2>
+<ul>
+<li>No dejar rutas abiertas en producción (<code>/prueba/medico/**</code>, <code>/api/codigosqr</code>, etc.).</li>
+<li>Configurar un <strong>tiempo de expiración corto</strong> para los tokens (ej. 15-30 minutos).</li>
+<li>Habilitar <strong>refresh tokens</strong> para extender sesiones de manera segura.</li>
+<li>Restringir <strong>CORS</strong> solo a los dominios del frontend autorizado.</li>
+<li>Usar HTTPS en todos los entornos productivos para proteger la transmisión del token.</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Página del documento"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/dev/frontend_web/enviroment_configuration"><div class="pagination-nav__sublabel">Anterior</div><div class="pagination-nav__label">Configuración de Entorno</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/dev/frontend_web/setup"><div class="pagination-nav__sublabel">Siguiente</div><div class="pagination-nav__label">Despliegue de la App Web</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#flujo-de-autenticación" class="table-of-contents__link toc-highlight">Flujo de autenticación</a></li><li><a href="#ejemplo-de-uso-del-jwt" class="table-of-contents__link toc-highlight">Ejemplo de uso del JWT</a></li><li><a href="#implementación-en-el-backend" class="table-of-contents__link toc-highlight">Implementación en el Backend</a></li><li><a href="#rutas-públicas" class="table-of-contents__link toc-highlight">Rutas públicas</a></li><li><a href="#rutas-protegidas" class="table-of-contents__link toc-highlight">Rutas protegidas</a></li><li><a href="#almacenamiento-del-token-en-el-frontend" class="table-of-contents__link toc-highlight">Almacenamiento del token en el Frontend</a></li><li><a href="#recomendaciones-de-seguridad" class="table-of-contents__link toc-highlight">Recomendaciones de seguridad</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">
+        <div style="text-align: center; line-height: 1.6;">
+          Universidad de Cuenca – Grupo de Investigación en Infraestructura de Datos Espaciales<br>
+          Facultad de Ingeniería. Departamento de Ciencias de la Computación<br>
+          Campus Balzay - Víctor Manuel Albornoz y Av. de los Cerezos (Bloque A) | Teléfono: +593 7 413 4520 ext. 4790<br>
+          Ing. Villie Morocho, PhD. | <a href="mailto:gi.ide@ucuenca.edu.ec">gi.ide@ucuenca.edu.ec</a><br><br>
+          &copy; 2025 Universidad de Cuenca
+        </div>
+      </div></div></div></footer></div>
+</body>
+</html>

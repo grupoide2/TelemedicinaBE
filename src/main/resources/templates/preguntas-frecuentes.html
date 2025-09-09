@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{_fragments/head :: head('CLIAS | SISA – Preguntas frecuentes', ~{::extraHead})}"></head>
+
+<th:block th:fragment="extraHead">
+    <!-- Estilos específicos -->
+    <link rel="stylesheet" href="/css/pages/preguntas-frecuentes.css">
+</th:block>
+
+<body>
+<header th:replace="~{_fragments/navbar :: navbar('proyecto')}"></header>
+
+<main class="container my-0">
+    <!-- Hero -->
+    <section class="hero-qs d-flex flex-column justify-content-center align-items-center text-center mb-5">
+        <div class="container">
+            <h1 class="fw-bold mb-3 text-white">PREGUNTAS FRECUENTES</h1>
+            <p class="lead text-light">Guías rápidas, videos y respuestas a consultas comunes sobre la App SISA.</p>
+        </div>
+    </section>
+
+    <!-- FAQ en acordeón -->
+    <section class="section card p-4 mb-4">
+        <h2 class="h4 section-title mb-3">Guías y Consultas</h2>
+
+        <div class="accordion" id="faqAccordion">
+
+            <!-- ¿Cómo actualizar la app? (video) -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faq-actualizar-h">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq-actualizar" aria-expanded="true" aria-controls="faq-actualizar">
+                        ¿Cómo actualizar la aplicación?
+                    </button>
+                </h2>
+                <div id="faq-actualizar" class="accordion-collapse collapse show" aria-labelledby="faq-actualizar-h"
+                     data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        <p class="text-muted">Video paso a paso para actualizar la app SISA.</p>
+                        <div class="ratio ratio-16x9 rounded overflow-hidden shadow-sm">
+                            <video controls preload="metadata">
+                                <source src="/images/posters/actualizar_app.mp4" type="video/mp4">
+                                Tu navegador no soporta video HTML5.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ¿Cómo usar la app? (video + timestamps) -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faq-usar-h">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq-usar" aria-expanded="false" aria-controls="faq-usar">
+                        ¿Cómo usar la app SISA?
+                    </button>
+                </h2>
+                <div id="faq-usar" class="accordion-collapse collapse" aria-labelledby="faq-usar-h"
+                     data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        <p class="text-muted">Toca una marca de tiempo para saltar al tema.</p>
+
+                        <ul class="timestamp-list list-unstyled mb-3">
+                            <li class="timestamp-item" data-time="16"><span class="time">00:16</span> Iniciar el proceso de automuestreo</li>
+                            <li class="timestamp-item" data-time="41"><span class="time">00:41</span> Registrar el dispositivo</li>
+                            <li class="timestamp-item" data-time="66"><span class="time">01:06</span> Inicio del automuestreo</li>
+                            <li class="timestamp-item" data-time="132"><span class="time">02:12</span> Recursos informativos</li>
+                            <li class="timestamp-item" data-time="160"><span class="time">02:40</span> Servicios relacionados</li>
+                            <li class="timestamp-item" data-time="172"><span class="time">02:52</span> Sistema de notificaciones</li>
+                            <li class="timestamp-item" data-time="183"><span class="time">03:03</span> Resultados</li>
+                            <li class="timestamp-item" data-time="224"><span class="time">03:44</span> Uso del chatbot</li>
+                        </ul>
+
+                        <div class="ratio ratio-16x9 rounded overflow-hidden shadow-sm">
+                            <video id="usarAppVideo" controls preload="metadata">
+                                <source src="/images/posters/usar_app.mp4" type="video/mp4">
+                                Tu navegador no soporta video HTML5.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Requisitos -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faq-req-h">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq-req" aria-expanded="false" aria-controls="faq-req">
+                        Requisitos para instalar SISA
+                    </button>
+                </h2>
+                <div id="faq-req" class="accordion-collapse collapse" aria-labelledby="faq-req-h"
+                     data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        <ul class="mb-0">
+                            <li>Android 8.0 (Oreo) o superior.</li>
+                            <li>Espacio libre recomendado: 200&nbsp;MB.</li>
+                            <li>Conexión a internet para sincronización y recursos.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Permisos -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faq-permisos-h">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq-permisos" aria-expanded="false" aria-controls="faq-permisos">
+                        Permisos solicitados por la app
+                    </button>
+                </h2>
+                <div id="faq-permisos" class="accordion-collapse collapse" aria-labelledby="faq-permisos-h"
+                     data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        <ul class="mb-0">
+                            <li>Notificaciones (opcional): recordatorios y avisos.</li>
+                            <li>Ubicación (opcional): servicios y centros cercanos.</li>
+                            <li>Almacenamiento: guardar datos locales temporales.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Privacidad -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faq-priv-h">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq-priv" aria-expanded="false" aria-controls="faq-priv">
+                        Privacidad y protección de datos
+                    </button>
+                </h2>
+                <div id="faq-priv" class="accordion-collapse collapse" aria-labelledby="faq-priv-h"
+                     data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        <p class="mb-0">
+                            SISA aplica buenas prácticas de seguridad y solo procesa la
+                            información estrictamente necesaria para su funcionamiento.
+                            No se comparten datos con terceros sin consentimiento.
+                            Para más detalles revisa la
+                            <a href="https://www.ucuenca.edu.ec/proteccion-de-datos-personales/"
+                               target="_blank" rel="noopener" class="text-decoration-underline">
+                                Política de Protección de Datos Personales de la Universidad de Cuenca
+                            </a>.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Soporte WhatsApp -->
+    <section class="support-cta card border-0 shadow-sm my-5">
+        <div class="card-body d-flex flex-column flex-md-row align-items-center justify-content-between p-4">
+            <div class="d-flex align-items-center gap-3 mb-3 mb-md-0">
+                <i class="bi bi-whatsapp" style="font-size:2rem;color:#25D366;"></i>
+                <div>
+                    <h3 class="h5 mb-1">¿Necesitas ayuda con la aplicación?</h3>
+                    <p class="mb-0 text-muted">Escríbenos por WhatsApp y con gusto te asistimos.</p>
+                </div>
+            </div>
+            <a href="https://wa.me/593991190832" target="_blank" rel="noopener"
+               class="btn btn-success btn-lg">
+                <i class="bi bi-whatsapp me-2"></i> Contactar por WhatsApp
+            </a>
+        </div>
+    </section>
+</main>
+
+<footer th:replace="~{_fragments/footer :: footer}"></footer>
+
+<!-- JS para timestamps -->
+<script>
+    (function(){
+      const v = document.getElementById('usarAppVideo');
+      if (!v) return;
+      document.querySelectorAll('.timestamp-item[data-time]').forEach(el=>{
+        el.addEventListener('click', ()=>{
+          const s = parseInt(el.dataset.time,10);
+          if (!isNaN(s)) { v.currentTime = s; v.play(); }
+        });
+      });
+    })();
+</script>
+</body>
+</html>

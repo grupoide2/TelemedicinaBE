@@ -1,0 +1,62 @@
+
+/* ===== Secciones y títulos ===== */
+.section-title {
+  position: relative;
+  color: #121249;
+  margin-bottom: 1rem;
+}
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 52px;
+  height: 4px;
+  border-radius: 2px;
+  background: #0d6efd;
+}
+.quienes-box {
+  border-left: 6px solid #0d6efd; /* resalta el bloque con un borde azul */
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.08);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.quienes-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 .75rem 1.25rem rgba(0,0,0,.12);
+}
+
+
+/* ===== Tarjetas de equipo ===== */
+.team-card {
+  border: 1px solid #e9eef6;
+  border-radius: 12px;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,.1);
+}
+
+
+/* Foto circular uniforme */
+.team-photo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border: 3px solid #f0f4ff;
+}
+
+/* ===== CTA ===== */
+.bg-light {
+  background-color: #f9fbff !important;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .team-photo {
+    width: 100px;
+    height: 100px;
+  }
+}

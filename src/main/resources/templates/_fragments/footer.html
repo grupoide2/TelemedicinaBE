@@ -1,0 +1,13 @@
+<th:block th:fragment="footer">
+    <footer class="footer">
+        <div style="text-align: center; line-height: 1.6;">
+            Universidad de Cuenca – Grupo de Investigación en Infraestructura de Datos Espaciales<br/>
+            Facultad de Ingeniería. Departamento de Ciencias de la Computación<br/>
+            Campus Balzay - Víctor Manuel Albornoz y Av. de los Cerezos (Bloque A)  | Teléfono: +593 7 413 4520 ext. 4790<br/>
+            Ing. Villie Morocho, PhD. |
+            <a href="mailto:gi.ide@ucuenca.edu.ec">gi.ide@ucuenca.edu.ec</a><br/><br/>
+            &copy; <span th:text="${#dates.format(#dates.createNow(), 'yyyy')}"></span> Universidad de Cuenca
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    </footer>
+</th:block>

@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{_fragments/head :: head('CLIAS | ¿Quiénes somos?', ~{::extraHead})}"></head>
+
+<th:block th:fragment="extraHead">
+    <link rel="stylesheet" href="/css/pages/quienes-somos.css">
+</th:block>
+
+<body>
+<header th:replace="_fragments/navbar :: navbar('qs')"></header>
+
+<main class="container my-0">
+
+    <!-- Hero -->
+    <section class="hero-qs d-flex flex-column justify-content-center align-items-center text-center mb-5">
+        <div class="container">
+            <h1 class="fw-bold mb-3 text-white">
+                GRUPO DE INVESTIGACIÓN INTEGRADO POR LAS FACULTADES DE CIENCIAS MÉDICAS, CIENCIAS QUÍMICAS E INGENIERÍA
+            </h1>
+            <p class="lead text-light">
+                Universidad de Cuenca
+            </p>
+        </div>
+    </section>
+
+
+    <!-- Acerca de -->
+    <section class="row g-4 align-items-start mb-5">
+        <div class="col-lg-7">
+            <div class="p-4 bg-white rounded shadow-sm quienes-box">
+                <h2 class="h4 ">Quiénes somos</h2>
+                <p>
+                    El Grupo de Investigación de Infraestructura de Datos Espaciales de la Universidad de Cuenca
+                    fue reconocido en 2022 por el Vicerrectorado de Investigación. Integramos especialistas de
+                    planificación y ordenamiento territorial (Facultad de Arquitectura y Urbanismo) y gestión de
+                    datos e ingeniería de software (Facultad de Ingeniería).
+                </p>
+                <p>
+                    El equipo está conformado por profesionales, investigadores, ayudantes de investigación,
+                    estudiantes de pregrado y posgrado que han aportado en proyectos de investigación aplicada
+                    y desarrollo con impacto nacional e internacional.
+                </p>
+                <p>
+                    Participamos en redes como <strong>CYTED-IDEAIS</strong> y <strong>RTC-REDU</strong>, lo que nos
+                    permite mantener un alto componente de innovación y colaboración.
+                </p>
+
+                <p>
+                    Actualmente, impulsamos el proyecto <strong>“CLIAS - IA en la promoción de automuestreo para la detección temprana
+                    de VPH en la prevención del cáncer de cuello uterino”</strong>. En esta iniciativa trabajamos junto con la Facultad
+                    de Ciencias Médicas y la Facultad de Ciencias Químicas, uniendo conocimientos de salud, química e inteligencia
+                    artificial con el apoyo del GAD Parroquial de Baños de la ciudad de Cuenca. El objetivo es fomentar el automuestreo como una herramienta innovadora para la detección temprana
+                    del Virus del Papiloma Humano (VPH), contribuyendo así a prevenir el cáncer de cuello uterino y mejorar la calidad
+                    de vida de las mujeres.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-lg-5 text-center">
+            <img src="/images/quienes-hero.jpg" class="img-fluid rounded shadow-sm"
+                 alt="Miembros del equipo enseñando el uso de la aplicación móvil.">
+        </div>
+    </section>
+
+    <!-- Proyectos -->
+    <section class="mb-5">
+        <h2 class="h4 section-title mb-4">Proyectos Relacionados</h2>
+
+        <!-- Artículo propio -->
+        <div class="mb-4">
+            <h3 class="h5 mb-3">Artículo Relacionado</h3>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item px-0">
+        <span class="badge bg-success me-2">
+          2025 Eleventh International Conference on eDemocracy & eGovernment (ICEDEG)
+        </span>
+                    <a href="https://ieeexplore.ieee.org/document/11081666" target="_blank" class="text-decoration-none">
+                        Systematic Review of Chatbot Development in Health and Education: Technologies, Frameworks, and Evaluation Metrics.
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Ing. Villie Morocho -->
+        <div class="mb-4">
+            <h3 class="h5 mb-3">Proyectos del Ing. Villie Morocho</h3>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item px-0">
+                    <span class="badge bg-secondary me-2">Marzo 2024 - Febrero 2025</span>
+                    <a href="https://investigacion.ucuenca.edu.ec/es/projects/propuesta-metodol%C3%B3gica-para-la-planificaci%C3%B3n-de-la-infraestructur-15" target="_blank" class="text-decoration-none">
+                        Propuesta Metodológica Para La Planificación De La Infraestructura De Salud Con Enfoque En Telesalud Usando Datos Geoespaciales En Un Entorno De Ciudades Inteligentes.
+                    </a>
+                </li>
+                <li class="list-group-item px-0">
+                    <span class="badge bg-secondary me-2">Junio 2016 - Mayo 2017</span>
+                    <a href="https://investigacion.ucuenca.edu.ec/es/projects/plataforma-de-software-para-la-segmentaci%C3%B3n-y-estimaci%C3%B3n-del-movi-15" target="_blank" class="text-decoration-none">
+                        Plataforma De Software Para La Segmentación Y Estimación Del Movimiento Del Ventrículo Izquierdo En Imagenología Cardíaca 4D.
+                    </a>
+                </li>
+                <li class="list-group-item px-0">
+                    <span class="badge bg-secondary me-2">Septiembre 2011 - Agosto 2012</span>
+                    <a href="https://investigacion.ucuenca.edu.ec/es/projects/plataforma-de-telecirug%C3%ADa-y-telemonitoreo-desde-hospitales-docent-15" target="_blank" class="text-decoration-none">
+                        Plataforma De Telecirugía Y Telemonitoreo Desde Hospitales Docentes A Aulas Virtuales.
+                    </a>
+                </li>
+                <li class="list-group-item px-0">
+                    <span class="badge bg-secondary me-2">Octubre 2008 - Septiembre 2010</span>
+                    <a href="https://investigacion.ucuenca.edu.ec/es/projects/tecnolog%C3%ADas-de-informaci%C3%B3n-y-comunicaci%C3%B3n-tic-para-mejorar-la-cal-15" target="_blank" class="text-decoration-none">
+                        Tecnologías De Información Y Comunicación -Tic- Para Mejorar La Calidad De La Atención Materna Y Neonatal En Los Servicios Públicos Del Ecuador.
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Dr. Bernardo Vega -->
+        <div class="mb-4">
+            <h3 class="h5 mb-3">Proyectos del Dr. Bernardo Vega</h3>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item px-0">
+                    <span class="badge bg-primary me-2">Enero 2024 - Enero 2025</span>
+                    <a href="https://investigacion.ucuenca.edu.ec/es/projects/prevalencia-genotipificaci%C3%B3n-y-efectos-del-virus-del-papiloma-hum-15" target="_blank" class="text-decoration-none">
+                        Prevalencia, Genotipificación Y Efectos Del Virus Del Papiloma Humano En La Calidad Del Esperma De Varones Que Asisten A Una Clínica De Fertilidad En La Ciudad De Cuenca.
+                    </a>
+                </li>
+                <li class="list-group-item px-0">
+                    <span class="badge bg-primary me-2">Enero - Diciembre 2020</span>
+                    <a href="https://investigacion.ucuenca.edu.ec/es/projects/estudio-de-seroepidemiolog%C3%ADa-sobre-covid-19-en-el-cant%C3%B3n-cuenca-e-15" target="_blank" class="text-decoration-none">
+                        Estudio De Seroepidemiología Sobre Covid-19 En El Cantón Cuenca, Ecuador 2020.
+                    </a>
+                </li>
+                <li class="list-group-item px-0">
+                    <span class="badge bg-primary me-2">Enero 2019 - Diciembre 2023</span>
+                    <a href="https://investigacion.ucuenca.edu.ec/es/projects/early-detection-of-cervical-cancer-in-hard-to-reach-populations-o-15" target="_blank" class="text-decoration-none">
+                        Early Detection Of Cervical Cancer In Hard-To-Reach Populations Of Women Through Portable And Point-Of-Care Hpv Testing.
+                    </a>
+                </li>
+                <li class="list-group-item px-0">
+                    <span class="badge bg-primary me-2">Abril 2012 - Marzo 2017</span>
+                    <a href="https://investigacion.ucuenca.edu.ec/es/projects/sexual-health-promotion-for-adolescents-promoci%C3%B3n-de-la-salud-sex-15" target="_blank" class="text-decoration-none">
+                        Sexual Health Promotion For Adolescents. Promoción De La Salud Sexual Para Adolescentes II Fase.
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Proyectos de Vinculación -->
+        <div>
+            <h3 class="h5 mb-3">Proyectos de Vinculación</h3>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item px-0">
+                    <span class="badge bg-secondary me-2">Septiembre 2023 - Agosto 2024</span>
+                    <a class="text-decoration-none">
+                        Piloto de Atención por Telemedicina para Comunidades Rurales.
+                    </a>
+                </li>
+                <li class="list-group-item px-0">
+                    <span class="badge bg-secondary me-2">Septiembre 2021 - Agosto 2022</span>
+                    <a target="_blank" class="text-decoration-none">
+                        Desarrollo e Innovación de Proyectos de Telemedicina y Salud.
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+
+    <!-- Equipo -->
+    <section class="mb-5">
+        <h2 class="h4 section-title mb-4">Nuestro equipo</h2>
+
+        <!-- Director y Codirector del Proyecto -->
+        <div class="mb-4">
+            <h3 class="h5 mb-3">Director y Codirector</h3>
+            <div class="row g-4">
+
+                <div class="col-sm-6 col-lg-4">
+                    <div class="team-card card h-100 text-center">
+                        <div class="pt-4">
+                            <img src="/images/team/villie.jpg"
+                                 alt="Ing. Villie Morocho, PhD."
+                                 class="team-photo rounded-circle">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">Ing. Villie Morocho, PhD.</h5>
+                            <p class="text-muted small mb-0">Director del Proyecto | Ingeniero en Sistemas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4">
+                    <div class="team-card card h-100 text-center">
+                        <div class="pt-4">
+                            <img src="/images/team/bernardo-vega.jpeg"
+                                 alt="Dr. Bernardo Vega, PhD."
+                                 class="team-photo rounded-circle">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title mb-1">Dr. Bernardo Vega, PhD.</h5>
+                            <p class="text-muted small mb-0">Codirector del Proyecto | Doctor en Medicina y Cirugía</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Investigadoras -->
+        <div class="mb-4">
+            <h3 class="h5 mb-3">Investigadoras</h3>
+            <div class="row g-4">
+
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="team-card card h-100 text-center">
+                        <div class="pt-4">
+                            <img src="/images/team/vivian-neira.webp"
+                                 alt="Dra. Vivian Neira, PhD."
+                                 class="team-photo rounded-circle">
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title mb-1">Dra. Vivian Neira, PhD.</h6>
+                            <p class="text-muted small mb-0">Doctora en Medicina y Cirugía</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="team-card card h-100 text-center">
+                        <div class="pt-4">
+                            <img src="/images/team/diana-pelaez.jpg"
+                                 alt="Ing. Diana Peláez"
+                                 class="team-photo rounded-circle">
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title mb-1">Lic. Diana Peláez, Mgst.</h6>
+                            <p class="text-muted small mb-0">Licenciada en Laboratorio Clínico</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="team-card card h-100 text-center">
+                        <div class="pt-4">
+                            <img src="/images/team/rosario-achig.png"
+                                 alt="Ing. Rosario Achig, Mgst."
+                                 class="team-photo rounded-circle">
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title mb-1">Ing. Rosario Achig, Mgst.</h6>
+                            <p class="text-muted small mb-0">Ingeniera en Sistemas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="team-card card h-100 text-center">
+                        <div class="pt-4">
+                            <img src="/images/team/veronica-viloria.png"
+                                 alt="Ing. Verónica Viloria"
+                                 class="team-photo rounded-circle">
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title mb-1">Ing. Verónica Viloria</h6>
+                            <p class="text-muted small mb-0">Ingeniera en Electrónica y Telecomunicaciones</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="team-card card h-100 text-center">
+                        <div class="pt-4">
+                            <img src="/images/team/micaela-davila.jpg"
+                                 alt="Ing. Micaela Dávila"
+                                 class="team-photo rounded-circle">
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title mb-1">Ing. Micaela Dávila</h6>
+                            <p class="text-muted small mb-0">Ingeniera en Ciencias de la Computación</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Ayudantes de Investigación -->
+        <div class="mb-4">
+            <h3 class="h5 mb-3">Ayudantes de Investigación</h3>
+            <div class="row g-4">
+
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="team-card card h-100 text-center">
+                        <div class="pt-4">
+                            <img src="/images/team/jonnathan-aguilar.jpg"
+                                 alt="Jonnathan Aguilar"
+                                 class="team-photo rounded-circle">
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title mb-1">Jonnathan Aguilar</h6>
+                            <p class="text-muted small mb-0">Ayudante de Investigación</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="team-card card h-100 text-center">
+                        <div class="pt-4">
+                            <img src="/images/team/emily-romero.png"
+                                 alt="Emily Romero"
+                                 class="team-photo rounded-circle">
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title mb-1">Emily Romero</h6>
+                            <p class="text-muted small mb-0">Ayudante de Investigación</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Tesista -->
+        <div class="mb-4">
+            <h3 class="h5 mb-3">Tesista</h3>
+            <div class="row g-4">
+
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="team-card card h-100 text-center">
+                        <div class="pt-4">
+                            <img src="/images/team/christian-ordonez.jpg"
+                                 alt="Christian Ordoñez"
+                                 class="team-photo rounded-circle">
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title mb-1">Christian Ordoñez</h6>
+                            <p class="text-muted small mb-0">Tesista de la Carrera de Computación</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- CTA -->
+    <section class="border rounded p-4 bg-light">
+        <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between">
+            <div class="mb-3 mb-md-0">
+                <h2 class="h5 mb-1">¿Colaboramos?</h2>
+                <p class="mb-0 text-muted">Escríbenos para alianzas, proyectos y pasantías.</p>
+            </div>
+            <div>
+                <a th:href="@{/contactos}" class="btn btn-primary">Contáctanos</a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer th:replace="_fragments/footer :: footer"></footer>
+</body>
+</html>

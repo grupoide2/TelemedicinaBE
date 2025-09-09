@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{_fragments/head :: head('CLIAS | SISA – Contactos', ~{::extraHead})}"></head>
+
+<th:block th:fragment="extraHead">
+    <link rel="stylesheet" href="/css/pages/contactos.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+</th:block>
+
+<body>
+<header th:replace="_fragments/navbar :: navbar('contactos')"></header>
+
+<main class="container my-0">
+
+    <!-- Encabezado -->
+    <section class="hero-qs d-flex flex-column justify-content-center align-items-center text-center mb-5">
+        <div class="container">
+            <h1 class="fw-bold mb-3 text-white">
+                CONTÁCTANOS
+            </h1>
+            <p class="lead text-light">
+                Ponemos a tu disposición nuestros canales de contacto para atender tus inquietudes.
+            </p>
+            <p class="lead text-light">
+            Comunícate con nosotros para más información o colaboración académica.
+        </p>
+        </div>
+    </section>
+
+    <div class="row g-4">
+
+        <!-- Información de contacto -->
+        <div class="col-lg-5">
+            <div class="card contact-card h-100">
+                <div class="card-body">
+                    <h4 class="mb-3">Información de contacto</h4>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-3 d-flex">
+                            <i class="bi bi-geo-alt-fill text-primary me-2 fs-5"></i>
+                            <div>
+                                <strong>Dirección:</strong><br>
+                                Campus Balzay - Víctor Manuel Albornoz y Av. de los Cerezos (Bloque A), Cuenca – Ecuador
+                            </div>
+                        </li>
+                        <li class="mb-3 d-flex">
+                            <i class="bi bi-telephone-fill text-primary me-2 fs-5"></i>
+                            <div>
+                                <strong>Teléfono:</strong><br>
+                                +593 7 413 4520 ext. 4790
+
+                            </div>
+                        </li>
+                        <li class="d-flex">
+                            <i class="bi bi-envelope-fill text-primary me-2 fs-5"></i>
+                            <div>
+                                <strong>Email:</strong><br>
+                                <a href="mailto:gi.ide@ucuenca.edu.ec">gi.ide@ucuenca.edu.ec</a>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!-- Mapa (responsive) -->
+                    <div class="ratio ratio-16x9 mt-4">
+                        <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.7397745490675!2d-79.03957934091979!3d-2.891191339471199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91cd22b0d263a699%3A0xb1b8b189eabaab86!2sCampus%20Balzay%20de%20la%20Universidad%20de%20Cuenca!5e0!3m2!1ses!2sec!4v1755280939647!5m2!1ses!2sec"
+                                allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                                title="Mapa – Universidad de Cuenca"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Formulario -->
+        <div class="col-lg-7">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h4 class="mb-3">Envíanos un mensaje</h4>
+
+                    <!-- TIP: mailto es inmediato pero depende del cliente de correo del usuario -->
+                    <form action="mailto:gi.ide@ucuenca.edu.ec" method="post" enctype="text/plain" novalidate>
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre"
+                                   autocomplete="name" required>
+                            <div class="form-text">Tu nombre completo.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo electrónico</label>
+                            <input type="email" class="form-control" id="email" name="email"
+                                   autocomplete="email" inputmode="email" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="mensaje" class="form-label">Mensaje</label>
+                            <textarea class="form-control" id="mensaje" name="mensaje"
+                                      rows="5" minlength="10" maxlength="2000" required></textarea>
+                            <div class="form-text">Máximo 2000 caracteres.</div>
+                        </div>
+
+                        <div class="d-grid d-sm-flex gap-2">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="bi bi-send-fill me-1"></i> Enviar mensaje
+                            </button>
+                            <a th:href="@{/}" class="btn btn-outline-secondary">Volver al inicio</a>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</main>
+
+<footer th:replace="_fragments/footer :: footer"></footer>
+</body>
+</html>

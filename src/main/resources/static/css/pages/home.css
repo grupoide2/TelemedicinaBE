@@ -1,0 +1,134 @@
+/* Contenedor del hero, ahora controla el alto y el “look” */
+.hero{
+  position: relative;
+  width: 100%;
+  height: clamp(360px, 50svh, 600px); /* no ocupa toda la página */
+  margin-bottom: 1.75rem;
+  overflow: hidden;
+  border-radius: 0 0 14px 14px;      /* borde inferior elegante */
+  box-shadow: 0 8px 24px rgba(4, 22, 60, .22);
+  isolation: isolate;                /* para overlays seguros */
+}
+
+/* La imagen llena el hero */
+.hero picture,
+.hero .hero-img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.hero .hero-img{
+  object-fit: cover;          /* llena sin deformar */
+  background: #0a2c5d;        /* color detrás si hay transparencia */
+}
+
+/* Overlay sutil para mejorar contraste del texto si algún día lo pones encima */
+.hero::before{
+  content:"";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Vignette lateral MUY leve para dar profundidad sin “ensuciar” */
+.hero::after{
+  content:"";
+  position: absolute;
+  inset: -2% -6%;
+  background:
+    radial-gradient(120% 60% at 0% 50%, rgba(0,0,0,.14) 0%, rgba(0,0,0,0) 55%) left,
+    radial-gradient(120% 60% at 100% 50%, rgba(0,0,0,.14) 0%, rgba(0,0,0,0) 55%) right;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Transición suave cuando cambie el source (cortesía) */
+@media (prefers-reduced-motion: no-preference){
+  .hero .hero-img{ transition: transform .6s ease; }
+  .hero:hover .hero-img{ transform: scale(1.015); } /* micro zoom al hover en desktop */
+}
+
+/* Ajuste fino en móviles muy pequeños */
+@media (max-width: 420px){
+  .hero{ height: clamp(300px, 45svh, 520px); }
+}
+
+
+/* Fino para móvil muy pequeño: un poco más alto y centrado el contenido */
+@media (max-width: 449.98px){
+  .hero-img{
+    height: clamp(240px, 32svh, 600px);
+    object-position: center 36%;
+  }
+}
+
+
+#actividadesCarousel img{
+  object-fit: cover;
+  height: 600px;
+}
+
+/* ---------------------------------------------------------------- */
+/* ===== Bloque estilo Google Play (home) ===== */
+
+
+.download-play{
+  background: #0f172a;           /* gris muy oscuro tirando a azul (bonito con tu paleta) */
+  color: #e5e7eb;
+  border-top: 1px solid rgba(255,255,255,.06);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.title-white{
+    color: white;
+}
+
+.download-play .lead{ color:#94a3b8; }
+
+/* Contenedor de capturas */
+.screenshots{
+  background:#111827;            /* panel aún más oscuro */
+  border-radius: 16px;
+  padding: 12px 0;
+  overflow: hidden;
+}
+
+/* Tira horizontal desplazable con “snap” */
+.screenshots-strip{
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 0 12px 8px 12px;
+  scroll-snap-type: x mandatory; /* efecto de “anclado” */
+}
+
+.screenshots-strip img{
+  height: 360px;
+  width: auto;
+  border-radius: 14px;
+  flex: 0 0 auto;                /* que no se estiren */
+  object-fit: cover;
+  scroll-snap-align: start;
+  box-shadow: 0 6px 18px rgba(0,0,0,.35);
+  border: 1px solid rgba(255,255,255,.06);
+}
+
+/* Scrollbar discreto */
+.screenshots-strip::-webkit-scrollbar{ height: 8px; }
+.screenshots-strip::-webkit-scrollbar-track{ background: transparent; }
+.screenshots-strip::-webkit-scrollbar-thumb{
+  background: #334155; border-radius: 6px;
+}
+
+/* Responsivo */
+@media (max-width: 991.98px){
+  .screenshots-strip img{ height: 300px; }
+}
+@media (max-width: 575.98px){
+  .screenshots-strip img{ height: 240px; }
+}
+

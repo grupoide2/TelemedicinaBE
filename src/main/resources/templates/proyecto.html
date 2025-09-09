@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{_fragments/head :: head('CLIAS | SISA – Proyecto', ~{::extraHead})}"></head>
+
+<th:block th:fragment="extraHead">
+    <link rel="stylesheet" href="/css/pages/proyecto.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+</th:block>
+
+<body>
+<header th:replace="_fragments/navbar :: navbar('proyecto')"></header>
+
+<main class="container my-0">
+    <!-- Encabezado -->
+    <section class="hero-qs d-flex flex-column justify-content-center align-items-center text-center mb-5">
+        <div class="container">
+            <h1 class="fw-bold mb-3 text-white">
+                IA EN LA PROMOCIÓN DE AUTOMUESTRO PARA LA DETECCIÓN TEMPRANA DE VPH EN LA PREVENCIÓN DEL CÁNCER DE CUELLO UTERINO
+            </h1>
+            <p class="lead text-light">
+                Información general del proyecto, la aplicación,  entes participantes y financiadores
+            </p>
+        </div>
+    </section>
+
+    <!-- ¿De qué se trata el proyecto? -->
+    <section class="section card p-4 mb-4">
+        <h2 class="h4 section-title mb-3">¿De qué se trata este proyecto?</h2>
+        <div class="row g-4">
+            <!-- Texto -->
+            <div class="col-lg-8 d-flex flex-column justify-content-center">
+                <p>
+                    Este proyecto surge como una respuesta innovadora para
+                    <strong>abordar las barreras existentes en la detección y prevención del cáncer cervical.</strong>
+                </p>
+                <p>
+                    Proporciona información educativa sobre el VPH, el cáncer de cuello uterino,
+                    el automuestreo y la salud sexual y reproductiva en general.
+                </p>
+            </div>
+
+            <!-- Imagen -->
+            <div class="col-lg-4 d-flex justify-content-center align-items-center">
+                <img src="/images/robot.png" class="img-fluid rounded shadow-sm"
+                     alt="Robot SISA" style="max-width: 220px;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Objetivo general -->
+    <section class="section card p-4 mb-4">
+        <h2 class="h4 section-title mb-3">Objetivo general</h2>
+        <div class="highlight p-3 rounded">
+            Implementar un asistente virtual (AV) basado en IA para promover el automuestreo
+            para la detección del VPH en pacientes de 30 a 65 años.
+            <!-- <p th:text="${proyecto.objetivoGeneral}"></p> -->
+        </div>
+    </section>
+
+    <!-- Objetivos específicos -->
+    <section class="section card p-4 mb-4">
+        <h2 class="h4 section-title mb-3">Objetivos específicos</h2>
+        <div class="objectives">
+            <div class="objective">
+                <div class="badge-obj">01</div>
+                <div>
+                    <strong>Asistente Virtual</strong>
+                    <p>Desarrollar un asistente conversacional para capacitar a pacientes de 30 a 65 años sobre el automuestreo y detección del VPH.</p>
+                </div>
+            </div>
+
+            <div class="objective">
+                <div class="badge-obj">02</div>
+                <div>
+                    <strong>Características sociodemográficas</strong>
+                    <p>Identificar las características sociodemográficas de la población de estudio.</p>
+                </div>
+            </div>
+
+            <div class="objective">
+                <div class="badge-obj">03</div>
+                <div>
+                    <strong>Contenido educativo</strong>
+                    <p>Integrar contenido interactivo sobre signos y síntomas del VPH para fomentar el autocuidado.</p>
+                </div>
+            </div>
+
+            <div class="objective">
+                <div class="badge-obj">04</div>
+                <div>
+                    <strong>Aceptabilidad y efectividad</strong>
+                    <p>Evaluar la efectividad del AV en la promoción del automuestreo y la concienciación sobre el cáncer cervical.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ¿Qué significa SISA? -->
+    <section class="section card p-4 mb-4">
+        <h2 class="h4 section-title mb-3">¿Qué significa SISA?</h2>
+        <div class="highlight p-3 rounded">
+            <p>SISA no es solo un acrónimo, es una propuesta con significado profundo.</p>
+           <p>Por un lado, corresponde a <strong>“Sistema Inteligente de Salud y Autocuidado”</strong>, reflejando su esencia tecnológica: una app diseñada para apoyar la prevención, el monitoreo y la gestión de la salud mediante herramientas inteligentes y accesibles.</p>
+           <p>Pero su fuerza simbólica va más allá. En quichua, <strong>la palabra “sisa” significa flor</strong>. La flor es un símbolo de vida, renovación y cuidado, lo cual conecta de manera natural con la misión de la app: florecer en bienestar, cultivar hábitos saludables y acompañar el autocuidado de las personas.</p>
+        </div>
+    </section>
+
+    <!-- Recursos: Descargar app -->
+    <section id="descarga" class="download-play-light py-5 px-3 mb-5 rounded shadow-sm">
+        <div class="container">
+            <div class="row align-items-center g-4">
+
+                <!-- Columna texto y botón -->
+                <div class="col-lg-5 text-center text-lg-start">
+                    <h2 class="fw-bold mb-3 text-primary">Descargar aplicación móvil</h2>
+                    <p class="mb-4 text-muted">
+                        Obtén la versión más reciente de la app SISA para Android y accede a todas sus funcionalidades.
+                    </p>
+                    <a href="https://drive.google.com/file/d/17T0eHBKUz-DRkZSMXPSgJCdT4zuwCAoV/view?usp=sharing"
+                       class="btn btn-primary btn-lg px-4" target="_blank">
+                        <i class="bi bi-download me-2"></i> Descargar APK
+                    </a>
+                </div>
+
+                <!-- Columna capturas -->
+                <div class="col-lg-7">
+                    <div class="screenshots-light">
+                        <div class="screenshots-strip">
+                            <img src="/images/app/cap2.jpeg" alt="Captura 2 de la app SISA">
+                            <img src="/images/app/cap6.jpeg" alt="Captura 6 de la app SISA">
+                            <img src="/images/app/cap3.jpeg" alt="Captura 3 de la app SISA">
+                            <img src="/images/app/cap8.jpeg" alt="Captura 8 de la app SISA">
+                            <img src="/images/app/cap5.jpeg" alt="Captura 5 de la app SISA">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Apartado de soporte -->
+    <section class="support-section text-center py-5 px-3 mb-5 rounded shadow-sm">
+        <div class="container">
+            <h2 class="fw-bold mb-3 text-success">¿Necesitas ayuda con la aplicación?</h2>
+            <p class="mb-4 text-muted">
+                Nuestro equipo está disponible para responder tus dudas y brindarte soporte.
+            </p>
+            <a href="https://wa.me/593991190832" target="_blank" class="btn btn-success btn-lg px-4">
+                <i class="bi bi-whatsapp me-2"></i> Contáctanos por WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Entes financiadores -->
+    <section class="section card p-4">
+        <h2 class="h4 section-title mb-3">Entes financiadores y unidades participantes</h2>
+
+        <div class="row g-4 align-items-stretch">
+            <!-- CLIAS -->
+            <div class="col-md-6 col-lg-4">
+                <div class="fin-card h-100 p-3">
+                    <div class="d-flex align-items-center gap-3 mb-2">
+                        <img src="/images/clias.png" class="fin-logo" alt="CLIAS">
+                        <h3 class="h6 m-0">
+                            <a href="https://clias.iecs.org.ar/" target="_blank" class="text-decoration-none text-dark">
+                                CLIAS
+                            </a>
+                        </h3>
+                    </div>
+                    <p class="mb-0 text-muted">
+                        El Centro de Inteligencia Artificial y Salud para América Latina y el Caribe (CLIAS) es una iniciativa liderada por el Centro de Implementación e Innovación de Políticas de Salud (CIIPS) del Instituto de Efectividad Clínica y Sanitaria (IECS) de Argentina, con el apoyo del Centro Internacional de Investigaciones para el Desarrollo de Canadá (IDRC).
+                    </p>
+                </div>
+            </div>
+
+            <!-- VIUC -->
+            <div class="col-md-6 col-lg-4">
+                <div class="fin-card h-100 p-3">
+                    <div class="d-flex align-items-center gap-3 mb-2">
+                        <img src="/images/viuc.png" class="fin-logo" alt="VIUC">
+                        <h3 class="h6 m-0">
+                            <a href="https://investigacion.ucuenca.edu.ec/es/" target="_blank" class="text-decoration-none text-dark">
+                                VIUC
+                            </a>
+                        </h3>
+                    </div>
+                    <p class="mb-0 text-muted">
+                        El Vicerrectorado de Investigación (VIUC) tiene como fin fortalecer el desarrollo de la ciencia, la tecnología y la innovación. Para lograrlo se trabaja desde enfoques disciplinarios e interdisciplinarios, promoviendo la inclusión de conocimientos y saberes ancestrales.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Departamento -->
+            <div class="col-md-6 col-lg-4">
+                <div class="fin-card h-100 p-3">
+                    <div class="d-flex align-items-center gap-3 mb-2">
+                        <img src="/images/dcc.png" class="fin-logo" alt="Departamento">
+                        <h3 class="h6 m-0">
+                            <a href="https://www.ucuenca.edu.ec/departamentos/ciencias-de-la-computacion/" target="_blank" class="text-decoration-none text-dark">
+                                Departamento de Ciencias de la Computación
+                            </a>
+                        </h3>
+                    </div>
+                    <p class="mb-0 text-muted">
+                        El Departamento de Ciencias de la Computación (DCC) tiene como misión: crear, difundir, extender y promover conocimientos tal como experiencias. Estimulan la formulación de ambientes al igual que modelos adecuados en el campo de la computación, tanto en el aspecto científico, tecnológico, social y empresarial.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Facultad de Ingeniería -->
+            <div class="col-md-6 col-lg-6">
+                <div class="fin-card h-100 p-3">
+                    <div class="d-flex align-items-center gap-3 mb-2">
+                        <img src="/images/ingenieria.png" class="fin-logo" alt="Facultad de Ingeniería">
+                        <h3 class="h6 m-0">
+                            <a href="https://www.ucuenca.edu.ec/facultad/ingenieria/" target="_blank" class="text-decoration-none text-dark">
+                                Facultad de Ingeniería
+                            </a>
+                        </h3>
+                    </div>
+                    <p class="mb-0 text-muted">
+                        La Facultad de Ingeniería cuenta con programas académicos reconocidos internacionalmente, que promueven y lideran actividades de investigación. Aplica un modelo educativo centrado en el estudiante y con procesos de mejora continua.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Facultad de Ciencias Médicas -->
+            <div class="col-md-6 col-lg-6">
+                <div class="fin-card h-100 p-3">
+                    <div class="d-flex align-items-center gap-3 mb-2">
+                        <img src="/images/medicina.png" class="fin-logo" alt="Facultad de Medicina">
+                        <h3 class="h6 m-0">
+                            <a href="https://www.ucuenca.edu.ec/facultad/ciencias-medicas/" target="_blank" class="text-decoration-none text-dark">
+                                Facultad de Ciencias Médicas
+                            </a>
+                        </h3>
+                    </div>
+                    <p class="mb-0 text-muted">
+                        La Facultad de Ciencias Médicas es un lugar donde la pasión por la salud y el compromiso con el bienestar se fusionan para formar profesionales altamente capacitados en diversas disciplinas del área de la salud. Nos enorgullece ofrecer un amplio programa académico de calidad que abarca varias áreas importantes para el bienestar de nuestra comunidad.
+                    </p>
+                </div>
+            </div>
+
+            <!-- GAD -->
+            <div class="col-md-6 col-lg-4">
+                <div class="fin-card h-100 p-3">
+                    <div class="d-flex align-items-center gap-3 mb-2">
+                        <img src="/images/gad.png" class="fin-logo" alt="VIUC">
+                        <h3 class="h6 m-0">
+                            <a href="https://parroquiabanos.gob.ec/" target="_blank" class="text-decoration-none text-dark">
+                                GAD de la parroquia Baños
+                            </a>
+                        </h3>
+                    </div>
+                    <p class="mb-0 text-muted">
+                        El Gobierno Autónomo Descentralizado (GAD) de la parroquia Baños de Cuenca mantiene un firme compromiso con el impulso de proyectos que fortalecen la salud y el bienestar de sus habitantes. Su gestión se orienta a promover iniciativas que mejoren la calidad de vida, integrando el desarrollo comunitario con una visión de progreso sostenible y humano.
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<footer th:replace="_fragments/footer :: footer"></footer>
+</body>
+</html>

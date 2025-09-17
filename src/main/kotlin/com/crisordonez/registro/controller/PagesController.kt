@@ -33,7 +33,12 @@ class PagesController {
     @GetMapping("/preguntas-frecuentes")
     fun preguntasFrecuentes(model: Model): String {
         model.addAttribute("active", "proyecto")
-        return "preguntas-frecuentes" // nombre del template sin .html
+        return "preguntas-frecuentes"
+    }
+    @GetMapping("/politica-privacidad")
+    fun politicaPrivacidad(model: Model): String {
+        model.addAttribute("active", "proyecto")
+        return "politica-privacidad"
     }
 
     @GetMapping("/hl7")

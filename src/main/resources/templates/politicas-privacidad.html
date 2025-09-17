@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{_fragments/head :: head('CLIAS | SISA – Política de Privacidad', ~{::extraHead})}"></head>
+
+<!-- Bloque adicional de head -->
+<th:block th:fragment="extraHead">
+    <!-- Estilos específicos -->
+    <link rel="stylesheet" href="/css/pages/politica-privacidad.css">
+</th:block>
+
+<body>
+<header th:replace="~{_fragments/navbar :: navbar('proyecto')}"></header>
+
+<main class="container my-0">
+    <!-- Hero -->
+    <section class="hero-qs d-flex flex-column justify-content-center align-items-center text-center mb-5">
+        <div class="container">
+            <h1 class="fw-bold mb-3 text-white">POLÍTICA DE PRIVACIDAD</h1>
+            <p class="lead text-light">Transparencia y seguridad en el manejo de tus datos en la App SISA.</p>
+        </div>
+    </section>
+
+    <!-- Política en acordeón -->
+    <section class="section card p-4 mb-4">
+        <h2 class="h4 section-title mb-3">Detalles de la Política</h2>
+
+        <div class="accordion" id="privacyAccordion">
+
+            <!-- Información recopilada -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="priv-info-h">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#priv-info" aria-expanded="true" aria-controls="priv-info">
+                        Información que recopilamos
+                    </button>
+                </h2>
+                <div id="priv-info" class="accordion-collapse collapse show" aria-labelledby="priv-info-h"
+                     data-bs-parent="#privacyAccordion">
+                    <div class="accordion-body">
+                        <ul>
+                            <li>Edad, estado civil, lengua materna.</li>
+                            <li>La ficha socioeconómica que ingresaste.</li>
+                            <li>Datos del dispositivo de automuestreo (código QR).</li>
+                            <li>Resultados de análisis de laboratorio asociados a tu muestra.</li>
+                            <li>Interacciones básicas con la app (notificaciones).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Uso de la información -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="priv-uso-h">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#priv-uso" aria-expanded="false" aria-controls="priv-uso">
+                        Uso de la información
+                    </button>
+                </h2>
+                <div id="priv-uso" class="accordion-collapse collapse" aria-labelledby="priv-uso-h"
+                     data-bs-parent="#privacyAccordion">
+                    <div class="accordion-body">
+                        <p>Los datos recopilados se utilizan únicamente para:</p>
+                        <ul>
+                            <li>Procesar y mostrar los resultados de laboratorio de forma segura.</li>
+                            <li>Enviar notificaciones sobre el estado de tu muestra.</li>
+                            <li>Ofrecer recursos educativos de salud sexual y prevención del VPH.</li>
+                            <li>Estadísticas finales del proyecto.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Compartición -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="priv-comp-h">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#priv-comp" aria-expanded="false" aria-controls="priv-comp">
+                        Compartición de la información
+                    </button>
+                </h2>
+                <div id="priv-comp" class="accordion-collapse collapse" aria-labelledby="priv-comp-h"
+                     data-bs-parent="#privacyAccordion">
+                    <div class="accordion-body">
+                        <p>
+                            Tus datos no se comparten con terceros, excepto con laboratorios autorizados
+                            para el análisis de muestras, bajo estricta confidencialidad.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seguridad -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="priv-sec-h">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#priv-sec" aria-expanded="false" aria-controls="priv-sec">
+                        Seguridad de la información
+                    </button>
+                </h2>
+                <div id="priv-sec" class="accordion-collapse collapse" aria-labelledby="priv-sec-h"
+                     data-bs-parent="#privacyAccordion">
+                    <div class="accordion-body">
+                        <p>
+                            Implementamos medidas de cifrado y controles de acceso para proteger
+                            tu información frente a accesos no autorizados, pérdida o alteración.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Permisos -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="priv-permisos-h">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#priv-permisos" aria-expanded="false" aria-controls="priv-permisos">
+                        Permisos solicitados por la app
+                    </button>
+                </h2>
+                <div id="priv-permisos" class="accordion-collapse collapse" aria-labelledby="priv-permisos-h"
+                     data-bs-parent="#privacyAccordion">
+                    <div class="accordion-body">
+                        <ul>
+                            <li><strong>Cámara:</strong> para escanear códigos QR de dispositivos.</li>
+                            <li><strong>Internet:</strong> para enviar y recibir resultados.</li>
+                            <li><strong>Notificaciones:</strong> para recordatorios y alertas de resultados.</li>
+                            <li><strong>Almacenamiento:</strong> limitado a visualización de archivos (si aplica).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Derechos -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="priv-derechos-h">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#priv-derechos" aria-expanded="false" aria-controls="priv-derechos">
+                        Derechos del usuario
+                    </button>
+                </h2>
+                <div id="priv-derechos" class="accordion-collapse collapse" aria-labelledby="priv-derechos-h"
+                     data-bs-parent="#privacyAccordion">
+                    <div class="accordion-body">
+                        <p>
+                            Puedes solicitar la eliminación de tu información o hacer consultas sobre
+                            el manejo de datos escribiéndonos a:
+                            <a href="mailto:gi.ide@ucuenca.edu.ec">gi.ide@ucuenca.edu.ec</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<footer th:replace="~{_fragments/footer :: footer}"></footer>
+</body>
+</html>

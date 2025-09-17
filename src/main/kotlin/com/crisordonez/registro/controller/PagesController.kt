@@ -37,9 +37,10 @@ class PagesController {
     }
     @GetMapping("/politica-privacidad")
     fun politicaPrivacidad(model: Model): String {
-        model.addAttribute("active", "proyecto")
+        model.addAttribute("active", "privacidad")
         return "politica-privacidad"
     }
+
 
     @GetMapping("/hl7")
     fun hl7(model: Model): String {

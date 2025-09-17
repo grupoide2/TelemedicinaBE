@@ -50,6 +50,10 @@
                             <li><a class="dropdown-item" th:href="@{/preguntas-frecuentes}">Preguntas Frecuentes</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:classappend="${active}=='privacidad' ? ' active'"
+                           th:href="@{/politica-privacidad}">Política de Privacidad</a>
+                    </li>
 
                     <li class="nav-item">
                         <a class="nav-link" th:classappend="${active}=='contactos' ? ' active'"

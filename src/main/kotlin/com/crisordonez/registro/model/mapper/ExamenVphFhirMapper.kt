@@ -6,7 +6,6 @@ import org.hl7.fhir.utilities.xhtml.XhtmlNode
 import java.time.ZoneId
 import java.util.Date
 import java.util.UUID
-import kotlin.math.min
 
 object ExamenVphFhirMapper {
 
@@ -185,16 +184,6 @@ object ExamenVphFhirMapper {
         riskObs?.let { dr.addResult(Reference("urn:uuid:${it.idElement.idPart}")) }
         genotypeObs.forEach { ob -> dr.addResult(Reference("urn:uuid:${ob.idElement.idPart}")) }
 
-        val contenidoBytes: ByteArray? = ex.contenido
-        if (contenidoBytes != null && ex.tipo?.name == "PDF") {
-            val att = Attachment().apply {
-                contentType = "application/pdf"
-                title = ex.nombre ?: "resultado.pdf"
-                data = contenidoBytes
-                size = min(contenidoBytes.size.toLong(), Int.MAX_VALUE.toLong()).toInt()
-            }
-            dr.addPresentedForm(att)
-        }
 
         dr.text = Narrative().apply {
             status = Narrative.NarrativeStatus.GENERATED

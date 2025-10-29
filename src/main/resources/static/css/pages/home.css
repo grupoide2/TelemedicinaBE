@@ -132,3 +132,12 @@
   .screenshots-strip img{ height: 240px; }
 }
 
+.download-play .store-badge{ width:auto; max-width:100%; display:block; }
+
+.download-play .badge-appstore{ height:56px; }
+.download-play .badge-gplay{   height:64px; }
+
+@media (max-width:575.98px){
+  .download-play .badge-appstore{ height:48px; }
+  .download-play .badge-gplay{   height:68px; }
+}

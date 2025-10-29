@@ -68,9 +68,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-10">
-                    <h2 class="fw-bold mb-3 text-center title-white">Cómo realizar el automuestreo</h2>
-                    <p class="lead mb-4 text-center">Video instructivo paso a paso.</p>
-
+                    <h2 class="text-center mb-4 text-danger fw-bold">¿Cómo realizar el automuestreo?</h2>
                     <div class="ratio ratio-16x9">
                         <video class="w-100 rounded shadow"
                                controls
@@ -81,14 +79,11 @@
                             Tu navegador no soporta video HTML5.
                         </video>
                     </div>
-                    <p class="text-center mt-2">
-                        <a href="/images/app/automuestreo.mp4" download>Descargar video</a>
-                    </p>
-
                 </div>
             </div>
         </div>
     </section>
+
     <!-- Descarga estilo Google Play -->
     <section class="download-play py-5">
         <div class="container">
@@ -100,29 +95,32 @@
                     <p class="lead mb-4">
                         Accede a todas las funcionalidades desde tu dispositivo móvil.
                     </p>
+                    <!-- Botones + badges en columna -->
+                    <div class="d-flex flex-column align-items-center gap-3">
+                        <a th:href="@{/proyecto#descarga}" class="btn btn-success btn-lg">Descargar APK</a>
 
-                    <!-- Badges oficiales de tiendas -->
-                    <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+
                         <!-- App Store -->
-                        <a href="https://apps.apple.com/ec/app/sisa-ucuenca/id6753017023?l=en-GB"
-                           target="_blank" rel="noopener noreferrer" aria-label="Descargar en App Store">
-                            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
-                                 alt="Download on the App Store" width="160" loading="lazy">
-                        </a>
+                            <a href="https://apps.apple.com/ec/app/sisa-ucuenca/id6753017023?l=en-GB"
+                               target="_blank" rel="noopener noreferrer" aria-label="Descargar en App Store">
+                                <img class="store-badge badge-appstore"
+                                     src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                                     alt="Download on the App Store" loading="lazy">
+                            </a>
 
-                        <!-- Google Play -->
-                        <a href="https://play.google.com/store/apps/details?id=com.ucuenca.sisa"
-                           target="_blank" rel="noopener noreferrer" aria-label="Obtener en Google Play">
-                            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
-                                 alt="Get it on Google Play" width="190" loading="lazy">
-                        </a>
-                    </div>
+                            <!-- Google Play -->
+                            <a href="https://play.google.com/store/apps/details?id=com.ucuenca.sisa"
+                               target="_blank" rel="noopener noreferrer" aria-label="Obtener en Google Play">
+                                <img class="store-badge badge-gplay"
+                                     src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                                     alt="Get it on Google Play" loading="lazy">
+                            </a>
 
-                    <!-- Link informativo interno (opcional) -->
-                    <div class="mt-4">
-                        <a th:href="@{/proyecto}" class="btn btn-outline-light btn-lg">
-                            Más detalles
-                        </a>
+
+                    <!-- Botón a la sección de descarga dentro de /proyecto (seguro para Thymeleaf) -->
+                    <a th:href="@{/proyecto}" class="btn btn-outline-light btn-lg">
+                        Más detalles
+                    </a>
                     </div>
                 </div>
 
@@ -130,11 +128,12 @@
                 <div class="col-lg-7">
                     <div class="screenshots shadow-sm">
                         <div class="screenshots-strip">
-                            <img src="/images/app/cap1.jpeg" alt="Captura 1 de SISA" loading="lazy">
-                            <img src="/images/app/cap7.jpeg" alt="Captura 7 de SISA" loading="lazy">
-                            <img src="/images/app/cap3.jpeg" alt="Captura 3 de SISA" loading="lazy">
-                            <img src="/images/app/cap4.jpeg" alt="Captura 4 de SISA" loading="lazy">
-                            <img src="/images/app/cap5.jpeg" alt="Captura 5 de SISA" loading="lazy">
+                            <!-- Agrega/quita imágenes libremente. Nombres: /images/app/cap1.jpeg, cap2.jpeg, ... -->
+                            <img src="/images/app/cap1.jpeg" alt="Captura 1 de SISA">
+                            <img src="/images/app/cap7.jpeg" alt="Captura 7                                                                                                                                                            de SISA">
+                            <img src="/images/app/cap3.jpeg" alt="Captura 3 de SISA">
+                            <img src="/images/app/cap4.jpeg" alt="Captura 4 de SISA">
+                            <img src="/images/app/cap5.jpeg" alt="Captura 5 de SISA">
                         </div>
                     </div>
                 </div>
